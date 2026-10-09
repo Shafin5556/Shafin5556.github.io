@@ -128,23 +128,21 @@
 <section class="section section-alt" id="skills">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Skills</p>
-      <h2>Technical toolkit</h2>
+      <p class="eyebrow">Capabilities</p>
+      <h2>What I bring to the work</h2>
     </div>
-    <div class="skills-grid">
+    <div class="capability-list">
       {{ range $i, $s := $r.skills }}
-      <div class="skill-block reveal delay-{{ add $i 1 }}">
-        <h3>{{ $s.category }}</h3>
-        <ul>
-          {{ range $s.items }}<li>{{ . }}</li>{{ end }}
-        </ul>
-      </div>
+      <article class="capability-item reveal delay-1">
+        <h3>{{ $s.title }}</h3>
+        <p>{{ $s.text }}</p>
+      </article>
       {{ end }}
     </div>
     <div class="interests reveal">
-      <h3>Focus areas</h3>
+      <h3>Technologies I use</h3>
       <div class="tag-row">
-        {{ range $r.interests }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ range $r.technologies }}<span class="tag">{{ . }}</span>{{ end }}
       </div>
     </div>
   </div>

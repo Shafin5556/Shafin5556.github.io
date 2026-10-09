@@ -1,6 +1,7 @@
 summary = "Software Engineer and M.Sc. CSE (Data Science) student with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
 
 interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern", "Data Science"]
+technologies = ["Laravel", "PHP", "Python", "Flask", "Node.js", "JavaScript", "MySQL", "NoSQL", "REST APIs", "Git"]
 
 [[experience]]
   title = "Software Engineer"
@@ -73,16 +74,24 @@ interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQ
   logo = "images/logo-diu.png"
 
 [[skills]]
-  category = "Backend"
-  items = ["Laravel (MVC)", "PHP", "Flask", "Node.js", "Python", "RESTful API"]
+  title = "Backend systems & APIs"
+  text = "Strong scripting and programming skills across Laravel (MVC), PHP, Python, Flask, and Node.js — building and maintaining production REST APIs and full-stack platforms."
 
 [[skills]]
-  category = "Frontend & Templating"
-  items = ["JavaScript (ES6)", "Jinja", "vis.js"]
+  title = "Async work & performance"
+  text = "Experience with asynchronous processing, background jobs, automation pipelines, and caching patterns to keep applications responsive under real workloads."
 
 [[skills]]
-  category = "Data & Tools"
-  items = ["MySQL", "NoSQL", "Git/GitHub", "SQL Optimization", "Data Science"]
+  title = "Secure & scalable delivery"
+  text = "Supports secure, scalable, and reliable application environments — from multi-tenant university systems with payments to national-scale digital case-filing infrastructure."
+
+[[skills]]
+  title = "Data & integration"
+  text = "Hands-on with MySQL/NoSQL, SQL optimization, web scraping, and data synchronization engines that connect academic and operational systems end to end."
+
+[[skills]]
+  title = "Engineering practices"
+  text = "Comfortable with Git/GitHub collaboration, OOP and MVC design, and shipping maintainable features in team and institutional settings."
 
 [[certificates]]
   name = "Thinking in Object-Oriented Programming"

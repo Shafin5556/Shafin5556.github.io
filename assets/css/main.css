@@ -452,9 +452,34 @@ a:hover {
 
 .project-grid,
 .edu-grid,
-.skills-grid {
+.skills-grid,
+.capability-list {
   display: grid;
   gap: 1.25rem;
+}
+
+.capability-list {
+  grid-template-columns: 1fr;
+}
+
+.capability-item {
+  padding: 1.45rem 1.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.8);
+}
+
+.capability-item h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--display);
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+}
+
+.capability-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 .project-grid {
