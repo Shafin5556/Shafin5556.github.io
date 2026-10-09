@@ -1,0 +1,47 @@
+baseURL = 'https://shafin5556.github.io/portfolio/'
+locale = 'en-us'
+title = 'Shafin Ahmed | Software Engineer'
+enableRobotsTXT = true
+canonifyURLs = false
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  author = 'Shafin Ahmed'
+  description = 'Software Engineer specializing in backend development, full-stack systems, and scalable automation.'
+  email = 'shafinahmed5556@gmail.com'
+  phone = '+880 1715-456868'
+  location = 'Dhaka, Bangladesh'
+  website = 'https://shafinahmed.site'
+  github = 'https://github.com/Shafin5556'
+  linkedin = 'https://linkedin.com/in/shafin5556'
+  tagline = 'Building production-grade software that solves real-world problems.'
+  availability = 'Open to impactful engineering opportunities'
+
+[menu]
+  [[menu.main]]
+    name = 'About'
+    url = '/#about'
+    weight = 1
+  [[menu.main]]
+    name = 'Experience'
+    url = '/#experience'
+    weight = 2
+  [[menu.main]]
+    name = 'Projects'
+    url = '/#projects'
+    weight = 3
+  [[menu.main]]
+    name = 'Skills'
+    url = '/#skills'
+    weight = 4
+  [[menu.main]]
+    name = 'Education'
+    url = '/#education'
+    weight = 5
+  [[menu.main]]
+    name = 'Contact'
+    url = '/#contact'
+    weight = 6
+
+[markup.goldmark.renderer]
+  unsafe = true

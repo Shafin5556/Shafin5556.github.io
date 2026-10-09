@@ -1,0 +1,106 @@
+summary = "Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
+
+[[experience]]
+  title = "Software Engineer"
+  company = "Center for Software Development & Emerging Tech (CSETech)"
+  location = "Daffodil Smart City (DSC), Birulia, Savar, Dhaka"
+  period = "Nov 2025 – Present"
+  description = "CSETech is the specialized development hub at Daffodil International University dedicated to building production-grade software solutions. The center bridges industry requirements by driving R&D in emerging technologies, fostering industry collaborations, and delivering scalable enterprise ecosystems."
+  contact = "Dr. Sheak Rashed Haider Noori — Professor & Head, CSE"
+  contact_email = "headcse@daffodilvarsity.edu.bd"
+
+[[experience]]
+  title = "Full Stack Developer"
+  company = "Fawz Biz Enterprises"
+  location = "Extension Pallabi, Mirpur 11.5, Dhaka"
+  period = "Jul 2025 – Present"
+  description = "Develop software products, custom systems, and integrated AI & Big Data solutions that transform operations and decision-making."
+
+[[experience]]
+  title = "Full Stack Developer"
+  company = "Office of the Affairs — Daffodil International University"
+  location = "Dhaka, Bangladesh"
+  period = "Jun 2024 – Jun 2026"
+  description = "Developed and maintained the official university student management platform, automating student services and administrative workflows."
+  contact = "Mr. Amit Chakraborty Chhoton — Assistant Professor, CSE"
+  contact_email = "amit.cse@diu.edu.bd"
+
+[[projects]]
+  name = "E-Family Court"
+  subtitle = "National e-Judiciary Platform"
+  org = "Ministry of Law, Justice and Parliamentary Affairs, Government of Bangladesh"
+  period = "Jun 2024 – Present"
+  description = "Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings."
+  url = "https://efamilycourt.judiciary.gov.bd/"
+  tags = ["Government", "Laravel", "Digital Transformation"]
+
+[[projects]]
+  name = "Student Hub"
+  subtitle = "Official Student Management Platform"
+  org = "Daffodil International University"
+  period = "2024 – Present"
+  description = "Developed a centralized management ecosystem for DIU featuring an automated orientation module and a multi-tenant Club Management System with integrated payments. Engineered a dynamic enrollment engine using custom web scrapers to synchronize academic data from GoEdu."
+  url = "https://studentshub.daffodilvarsity.edu.bd/"
+  tags = ["Full Stack", "Automation", "Multi-tenant"]
+
+[[education]]
+  degree = "BS in Computer Science and Engineering"
+  school = "Daffodil International University"
+  period = "Aug 2021 – Aug 2025"
+  detail = "CGPA 3.30"
+
+[[education]]
+  degree = "Higher Secondary Certificate"
+  school = "Daffodil International College"
+  period = "2019 – 2020"
+  detail = "GPA 4.33"
+
+[[skills]]
+  category = "Backend"
+  items = ["Laravel (MVC)", "PHP", "Flask", "Node.js", "Python", "RESTful API"]
+
+[[skills]]
+  category = "Frontend & Templating"
+  items = ["JavaScript (ES6)", "Jinja", "vis.js"]
+
+[[skills]]
+  category = "Data & Tools"
+  items = ["MySQL", "NoSQL", "Git/GitHub", "SQL Optimization"]
+
+[[certificates]]
+  name = "Thinking in Object-Oriented Programming"
+  issuer = "Dr. Syed Akter Hossain (Dean and Professor of CSE)"
+
+[[certificates]]
+  name = "Optimization Using Artificial Intelligence — Hill Climbing Algorithm"
+  issuer = "Mr. Nuruzzaman Faruqui (Assistant Professor)"
+
+[[certificates]]
+  name = "Building The Next-Gen System"
+  issuer = "Powered by Microsoft"
+
+[[certificates]]
+  name = "Prompt Engineering & Creative Innovation"
+  issuer = "DPTI, International Online University & GoEdu"
+
+[[achievements]]
+  name = "Datathon Contest 2023"
+  detail = "1st Runner-up"
+
+[[achievements]]
+  name = "DIU Take-off Programming Contest"
+  detail = "Top 30"
+
+[[achievements]]
+  name = "Project Showcase"
+  detail = "Organized by Department of CIS"
+
+[[languages]]
+  name = "English"
+  level = "Full Professional Proficiency"
+
+[[languages]]
+  name = "Bangla"
+  level = "Native or Bilingual Proficiency"
+
+interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern"]
