@@ -1,5 +1,7 @@
 summary = "Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
 
+interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern"]
+
 [[experience]]
   title = "Software Engineer"
   company = "Center for Software Development & Emerging Tech (CSETech)"
@@ -102,5 +104,3 @@ summary = "Software Engineer with experience in backend development and system a
 [[languages]]
   name = "Bangla"
   level = "Native or Bilingual Proficiency"
-
-interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern"]

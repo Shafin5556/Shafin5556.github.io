@@ -4,7 +4,11 @@ Professional personal website built with [Hugo](https://gohugo.io/) and hosted o
 
 ## Live site
 
-https://shafin5556.github.io/portfolio/
+**https://shafin5556.github.io/**
+
+## Repository
+
+https://github.com/Shafin5556/Shafin5556.github.io
 
 ## Local development
 
@@ -14,12 +18,14 @@ hugo server -D
 
 Open http://localhost:1313/
 
-## Build
+## Build & deploy
 
 ```bash
-hugo --minify
+hugo --minify --baseURL "https://shafin5556.github.io/"
 ```
+
+Source code is on the `main` branch. The published site is on the `gh-pages` branch (GitHub Pages).
 
 ## Content source
 
-Portfolio content is based on `Shafin-Ahmed-Resume.pdf` and maintained in `data/resume.toml`.
+Portfolio content is based on the CV and maintained in `data/resume.toml`.
