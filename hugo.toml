@@ -1,4 +1,4 @@
-baseURL = 'https://shafin5556.github.io/portfolio/'
+baseURL = 'https://shafin5556.github.io/'
 locale = 'en-us'
 title = 'Shafin Ahmed | Software Engineer'
 enableRobotsTXT = true
