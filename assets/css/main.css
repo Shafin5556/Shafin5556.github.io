@@ -91,16 +91,13 @@ a:hover {
   font-weight: 700;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
+.brand-photo {
   width: 2.35rem;
   height: 2.35rem;
-  border-radius: 0.7rem;
-  background: var(--panel);
-  color: #d4a574;
-  font-family: var(--display);
-  font-size: 0.95rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(15, 42, 36, 0.15);
+  background: #1a1a1a;
 }
 
 .brand-text {
@@ -268,6 +265,20 @@ a:hover {
   padding: 4px;
 }
 
+.org-logo-lg {
+  width: 112px;
+  height: 112px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 10px 24px rgba(15, 42, 36, 0.08);
+}
+
+.timeline-logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .badge-current {
   display: inline-flex;
   align-items: center;
@@ -407,9 +418,10 @@ a:hover {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 1.5rem;
-  padding: 1.6rem;
+  grid-template-columns: 132px 180px 1fr;
+  gap: 1.4rem;
+  align-items: start;
+  padding: 1.75rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 253, 249, 0.72);
@@ -663,6 +675,15 @@ a:hover {
   .about-facts,
   .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-logo {
+    justify-content: flex-start;
+  }
+
+  .org-logo-lg {
+    width: 96px;
+    height: 96px;
   }
 
   .hero {

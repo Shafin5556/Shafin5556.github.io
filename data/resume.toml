@@ -1,4 +1,4 @@
-summary = "Software Engineer and M.Sc. CSE (Data Science) student with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
+summary = "Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
 
 interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern", "Data Science"]
 technologies = ["Laravel", "PHP", "Python", "Flask", "Node.js", "JavaScript", "MySQL", "NoSQL", "REST APIs", "Git"]
@@ -55,7 +55,7 @@ technologies = ["Laravel", "PHP", "Python", "Flask", "Node.js", "JavaScript", "M
   degree = "M.Sc. in CSE (Major in Data Science)"
   school = "Daffodil International University"
   period = "1 May 2026 – 30 Apr 2028"
-  detail = "Currently enrolled"
+  detail = "Major in Data Science"
   logo = "images/logo-diu.png"
   current = true
 

@@ -5,7 +5,7 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <p class="eyebrow">Software Engineer · M.Sc. Data Science · Dhaka</p>
+      <p class="eyebrow">Software Engineer · Dhaka</p>
       <h1>Shafin<br>Ahmed</h1>
       <p class="hero-lead">{{ .Site.Params.tagline }}</p>
       <div class="hero-actions">
@@ -20,7 +20,7 @@
         </div>
         <p class="panel-label">Currently</p>
         <h2>Software Engineer</h2>
-        <p>CSETech · M.Sc. in CSE (Data Science)</p>
+        <p>CSETech · Daffodil International University</p>
         <div class="panel-meta">
           <span>{{ .Site.Params.availability }}</span>
         </div>
@@ -67,18 +67,16 @@
     <div class="timeline">
       {{ range $i, $job := $r.experience }}
       <article class="timeline-item reveal delay-{{ add $i 1 }}">
+        {{ with $job.logo }}
+        <div class="timeline-logo">
+          <img class="org-logo org-logo-lg" src="{{ . | relURL }}" alt="{{ $job.company }} logo" loading="lazy" width="112" height="112">
+        </div>
+        {{ end }}
         <div class="timeline-period">{{ $job.period }}</div>
         <div class="timeline-body">
-          <div class="item-head">
-            {{ with $job.logo }}
-            <img class="org-logo" src="{{ . | relURL }}" alt="{{ $job.company }} logo" loading="lazy" width="56" height="56">
-            {{ end }}
-            <div>
-              <h3>{{ $job.title }}</h3>
-              <p class="org">{{ $job.company }}</p>
-              <p class="loc">{{ $job.location }}</p>
-            </div>
-          </div>
+          <h3>{{ $job.title }}</h3>
+          <p class="org">{{ $job.company }}</p>
+          <p class="loc">{{ $job.location }}</p>
           <p>{{ $job.description }}</p>
           {{ with $job.contact }}
           <p class="contact-note">Reference: {{ . }}{{ with $job.contact_email }} · <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}</p>
