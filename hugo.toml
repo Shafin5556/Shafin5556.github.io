@@ -14,7 +14,7 @@ disableKinds = ['taxonomy', 'term']
   website = 'https://shafinahmed.site'
   github = 'https://github.com/Shafin5556'
   linkedin = 'https://linkedin.com/in/shafin5556'
-  tagline = 'Building production-grade software that solves real-world problems.'
+  tagline = 'Building production-grade software that solves real-world problems — currently pursuing M.Sc. in CSE (Major in Data Science).'
   availability = 'Open to impactful engineering opportunities'
 
 [menu]

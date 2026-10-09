@@ -1,12 +1,13 @@
-summary = "Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
+summary = "Software Engineer and M.Sc. CSE (Data Science) student with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions."
 
-interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern"]
+interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQL Optimization", "OOP Principles", "MVC Pattern", "Data Science"]
 
 [[experience]]
   title = "Software Engineer"
   company = "Center for Software Development & Emerging Tech (CSETech)"
   location = "Daffodil Smart City (DSC), Birulia, Savar, Dhaka"
   period = "Nov 2025 – Present"
+  logo = "images/logo-csetech.png"
   description = "CSETech is the specialized development hub at Daffodil International University dedicated to building production-grade software solutions. The center bridges industry requirements by driving R&D in emerging technologies, fostering industry collaborations, and delivering scalable enterprise ecosystems."
   contact = "Dr. Sheak Rashed Haider Noori — Professor & Head, CSE"
   contact_email = "headcse@daffodilvarsity.edu.bd"
@@ -16,13 +17,15 @@ interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQ
   company = "Fawz Biz Enterprises"
   location = "Extension Pallabi, Mirpur 11.5, Dhaka"
   period = "Jul 2025 – Present"
+  logo = "images/logo-fawz.png"
   description = "Develop software products, custom systems, and integrated AI & Big Data solutions that transform operations and decision-making."
 
 [[experience]]
   title = "Full Stack Developer"
-  company = "Office of the Affairs — Daffodil International University"
+  company = "Office of the Students' Affairs — Daffodil International University"
   location = "Dhaka, Bangladesh"
   period = "Jun 2024 – Jun 2026"
+  logo = "images/logo-osa.png"
   description = "Developed and maintained the official university student management platform, automating student services and administrative workflows."
   contact = "Mr. Amit Chakraborty Chhoton — Assistant Professor, CSE"
   contact_email = "amit.cse@diu.edu.bd"
@@ -32,6 +35,7 @@ interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQ
   subtitle = "National e-Judiciary Platform"
   org = "Ministry of Law, Justice and Parliamentary Affairs, Government of Bangladesh"
   period = "Jun 2024 – Present"
+  logo = "images/logo-efamily-court.png"
   description = "Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings."
   url = "https://efamilycourt.judiciary.gov.bd/"
   tags = ["Government", "Laravel", "Digital Transformation"]
@@ -41,21 +45,32 @@ interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQ
   subtitle = "Official Student Management Platform"
   org = "Daffodil International University"
   period = "2024 – Present"
+  logo = "images/logo-student-hub.png"
   description = "Developed a centralized management ecosystem for DIU featuring an automated orientation module and a multi-tenant Club Management System with integrated payments. Engineered a dynamic enrollment engine using custom web scrapers to synchronize academic data from GoEdu."
   url = "https://studentshub.daffodilvarsity.edu.bd/"
   tags = ["Full Stack", "Automation", "Multi-tenant"]
+
+[[education]]
+  degree = "M.Sc. in CSE (Major in Data Science)"
+  school = "Daffodil International University"
+  period = "1 May 2026 – 30 Apr 2028"
+  detail = "Currently enrolled"
+  logo = "images/logo-diu.png"
+  current = true
 
 [[education]]
   degree = "BS in Computer Science and Engineering"
   school = "Daffodil International University"
   period = "Aug 2021 – Aug 2025"
   detail = "CGPA 3.30"
+  logo = "images/logo-diu.png"
 
 [[education]]
   degree = "Higher Secondary Certificate"
   school = "Daffodil International College"
   period = "2019 – 2020"
   detail = "GPA 4.33"
+  logo = "images/logo-diu.png"
 
 [[skills]]
   category = "Backend"
@@ -67,7 +82,7 @@ interests = ["Open Source Contribution", "Scalable Solutions", "Automation", "SQ
 
 [[skills]]
   category = "Data & Tools"
-  items = ["MySQL", "NoSQL", "Git/GitHub", "SQL Optimization"]
+  items = ["MySQL", "NoSQL", "Git/GitHub", "SQL Optimization", "Data Science"]
 
 [[certificates]]
   name = "Thinking in Object-Oriented Programming"

@@ -5,7 +5,7 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <p class="eyebrow">Software Engineer · Dhaka</p>
+      <p class="eyebrow">Software Engineer · M.Sc. Data Science · Dhaka</p>
       <h1>Shafin<br>Ahmed</h1>
       <p class="hero-lead">{{ .Site.Params.tagline }}</p>
       <div class="hero-actions">
@@ -15,9 +15,12 @@
     </div>
     <aside class="hero-panel reveal delay-1">
       <div class="panel-card">
+        <div class="profile-wrap">
+          <img class="profile-photo" src="{{ "images/profile.png" | relURL }}" alt="Shafin Ahmed" width="160" height="160">
+        </div>
         <p class="panel-label">Currently</p>
         <h2>Software Engineer</h2>
-        <p>CSETech · Daffodil International University</p>
+        <p>CSETech · M.Sc. in CSE (Data Science)</p>
         <div class="panel-meta">
           <span>{{ .Site.Params.availability }}</span>
         </div>
@@ -66,9 +69,16 @@
       <article class="timeline-item reveal delay-{{ add $i 1 }}">
         <div class="timeline-period">{{ $job.period }}</div>
         <div class="timeline-body">
-          <h3>{{ $job.title }}</h3>
-          <p class="org">{{ $job.company }}</p>
-          <p class="loc">{{ $job.location }}</p>
+          <div class="item-head">
+            {{ with $job.logo }}
+            <img class="org-logo" src="{{ . | relURL }}" alt="{{ $job.company }} logo" loading="lazy" width="56" height="56">
+            {{ end }}
+            <div>
+              <h3>{{ $job.title }}</h3>
+              <p class="org">{{ $job.company }}</p>
+              <p class="loc">{{ $job.location }}</p>
+            </div>
+          </div>
           <p>{{ $job.description }}</p>
           {{ with $job.contact }}
           <p class="contact-note">Reference: {{ . }}{{ with $job.contact_email }} · <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}</p>
@@ -90,10 +100,17 @@
       {{ range $i, $p := $r.projects }}
       <article class="project-card reveal delay-{{ add $i 1 }}">
         <div class="project-top">
-          <p class="project-period">{{ $p.period }}</p>
-          <h3>{{ $p.name }}</h3>
-          <p class="project-sub">{{ $p.subtitle }}</p>
-          <p class="org">{{ $p.org }}</p>
+          <div class="item-head">
+            {{ with $p.logo }}
+            <img class="org-logo" src="{{ . | relURL }}" alt="{{ $p.name }} logo" loading="lazy" width="56" height="56">
+            {{ end }}
+            <div>
+              <p class="project-period">{{ $p.period }}</p>
+              <h3>{{ $p.name }}</h3>
+              <p class="project-sub">{{ $p.subtitle }}</p>
+              <p class="org">{{ $p.org }}</p>
+            </div>
+          </div>
         </div>
         <p>{{ $p.description }}</p>
         <div class="tag-row">
@@ -141,11 +158,18 @@
     </div>
     <div class="edu-grid">
       {{ range $i, $e := $r.education }}
-      <article class="edu-card reveal delay-{{ add $i 1 }}">
-        <p class="edu-period">{{ $e.period }}</p>
-        <h3>{{ $e.degree }}</h3>
-        <p class="org">{{ $e.school }}</p>
-        <p class="edu-detail">{{ $e.detail }}</p>
+      <article class="edu-card reveal delay-{{ add $i 1 }}{{ if $e.current }} is-current{{ end }}">
+        <div class="item-head">
+          {{ with $e.logo }}
+          <img class="org-logo" src="{{ . | relURL }}" alt="{{ $e.school }} logo" loading="lazy" width="56" height="56">
+          {{ end }}
+          <div>
+            <p class="edu-period">{{ $e.period }}{{ if $e.current }} <span class="badge-current">Current</span>{{ end }}</p>
+            <h3>{{ $e.degree }}</h3>
+            <p class="org">{{ $e.school }}</p>
+            <p class="edu-detail">{{ $e.detail }}</p>
+          </div>
+        </div>
       </article>
       {{ end }}
     </div>
