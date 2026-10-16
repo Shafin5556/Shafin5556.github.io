@@ -78,23 +78,6 @@
       if (span && label) span.textContent = label;
     });
 
-    // Print sheet
-    setText("print-name", p.name);
-    setText(
-      "print-header-line",
-      (p.role || "") +
-        " · " +
-        (p.location || "") +
-        " · " +
-        (p.email || "") +
-        " · " +
-        (p.phone || "")
-    );
-    setText(
-      "print-links-line",
-      (p.github || "") + " · " + (p.linkedin || "") + " · " + (p.portfolio || "")
-    );
-    setText("print-bio", p.bio);
   }
 
   function renderEducation(items) {
@@ -114,32 +97,9 @@
           escapeHtml(item.title) +
           "</strong><p>" +
           escapeHtml(item.detail) +
-          "</p></div>" +
+          "</p>" +
           badge +
-          "</div>"
-        );
-      })
-      .join("");
-  }
-
-  function renderTimeline(items) {
-    const box = document.getElementById("career-timeline");
-    if (!box || !Array.isArray(items)) return;
-    box.innerHTML = items
-      .map((item, i) => {
-        const edu = item.type === "edu" ? " edu" : "";
-        return (
-          '<div class="tl-item" style="--i:' +
-          i +
-          '"><span class="tl-dot' +
-          edu +
-          '"></span><div class="tl-card"><em>' +
-          escapeHtml(item.when) +
-          "</em><strong>" +
-          escapeHtml(item.title) +
-          "</strong><p>" +
-          escapeHtml(item.text) +
-          "</p></div></div>"
+          "</div></div>"
         );
       })
       .join("");
@@ -240,54 +200,6 @@
       .join("");
   }
 
-  function renderPrint(data) {
-    const exp = document.getElementById("print-experience");
-    if (exp && data.experience) {
-      exp.innerHTML = data.experience
-        .map(
-          (j) =>
-            "<p><strong>" +
-            escapeHtml(j.title) +
-            "</strong> — " +
-            escapeHtml(j.org) +
-            " · " +
-            escapeHtml(j.dates) +
-            "</p>"
-        )
-        .join("");
-    }
-    const projects = document.getElementById("print-projects");
-    if (projects && data.projects) {
-      projects.innerHTML = data.projects
-        .map(
-          (p) =>
-            "<p><strong>" +
-            escapeHtml(p.title) +
-            "</strong> — " +
-            escapeHtml(p.domain) +
-            "</p>"
-        )
-        .join("");
-    }
-    const edu = document.getElementById("print-education");
-    if (edu && data.education) {
-      edu.innerHTML = data.education
-        .map(
-          (e) =>
-            "<p><strong>" +
-            escapeHtml(e.title) +
-            "</strong> — " +
-            escapeHtml(e.detail) +
-            "</p>"
-        )
-        .join("");
-    }
-    const skills = document.getElementById("print-skills");
-    if (skills && data.technologies) {
-      skills.textContent = data.technologies.join(", ");
-    }
-  }
-
   async function loadContent() {
     try {
       const res = await fetch("data/site.json?t=" + Date.now());
@@ -296,12 +208,10 @@
       window.__SITE_CONTENT__ = data;
       applyProfile(data.profile);
       renderEducation(data.education);
-      renderTimeline(data.timeline);
       renderExperience(data.experience);
       renderProjects(data.projects);
       renderSkills(data.skills, data.technologies);
       renderAchievements(data.achievements);
-      renderPrint(data);
       document.dispatchEvent(new CustomEvent("site-content-ready", { detail: data }));
     } catch (err) {
       console.warn("Content load skipped:", err);

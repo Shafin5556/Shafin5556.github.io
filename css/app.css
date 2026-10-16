@@ -862,7 +862,15 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
   .sidebar { display: none; }
   .bottom-nav { display: flex; }
   .stage {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
     padding: 0.55rem 0.75rem calc(var(--bottom) + env(safe-area-inset-bottom) + 0.9rem);
+  }
+  .pages,
+  .page {
+    min-width: 0;
+    max-width: 100%;
   }
   .topbar {
     position: sticky;
@@ -896,6 +904,70 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
   }
   .job { grid-template-columns: 48px 1fr; }
   .quick-tile:active { background: var(--surface-solid); }
+
+  /* About: keep cards inside phone width */
+  #page-about .hero-shell,
+  #page-about .settings-card,
+  #page-about .about-split {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #page-about .settings-card {
+    padding: 1rem 0.9rem;
+  }
+  .about-lead {
+    font-size: 0.95rem !important;
+    text-align: left;
+    hyphens: none;
+  }
+  .about-links .tile-text span {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+  }
+  .about-education .list-item {
+    grid-template-columns: 40px 1fr;
+    align-items: start;
+    gap: 0.65rem;
+  }
+  .about-education .list-item img {
+    width: 40px;
+    height: 40px;
+  }
+  .about-education .list-item .badge {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0.15rem;
+  }
+  .about-education .list-item strong {
+    font-size: 0.9rem;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  .about-education .list-item p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .panel-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .github-panel {
+    overflow: hidden;
+  }
+  .gh-chart-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .contrib-graph {
+    min-width: 560px;
+  }
+  .status-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 /* ===== Theme controls ===== */

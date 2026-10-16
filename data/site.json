@@ -45,50 +45,6 @@
       "badge": ""
     }
   ],
-  "timeline": [
-    {
-      "when": "Nov 2025 – Present",
-      "title": "Software Engineer · CSETech",
-      "text": "Production systems & emerging tech at DIU.",
-      "type": "work"
-    },
-    {
-      "when": "Jul 2025 – Present",
-      "title": "Full Stack Developer · Fawz Biz",
-      "text": "Custom systems, AI & Big Data solutions.",
-      "type": "work"
-    },
-    {
-      "when": "Jun 2024 – Present",
-      "title": "E-Family Court · Judiciary",
-      "text": "National digital case-filing infrastructure.",
-      "type": "work"
-    },
-    {
-      "when": "2024 – Present",
-      "title": "Student Hub · DIU",
-      "text": "Multi-tenant student platform & automation.",
-      "type": "work"
-    },
-    {
-      "when": "May 2026 – Apr 2028",
-      "title": "M.Sc. CSE (Data Science) · DIU",
-      "text": "Graduate studies in progress.",
-      "type": "edu"
-    },
-    {
-      "when": "Aug 2021 – Aug 2025",
-      "title": "BS in CSE · DIU",
-      "text": "CGPA 3.30",
-      "type": "edu"
-    },
-    {
-      "when": "2019 – 2020",
-      "title": "HSC · Daffodil International College",
-      "text": "GPA 4.33",
-      "type": "edu"
-    }
-  ],
   "experience": [
     {
       "title": "Software Engineer",

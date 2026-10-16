@@ -160,16 +160,6 @@
       ${field("Detail", "detail", item.detail)}`;
   }
 
-  function timelineFields(item) {
-    return `
-      <div class="grid-2">
-        ${field("When", "when", item.when)}
-        ${field("Type (work / edu)", "type", item.type)}
-        ${field("Title", "title", item.title)}
-      </div>
-      ${field("Text", "text", item.text, "textarea")}`;
-  }
-
   function renderSkillsExtra() {
     const panel = $('[data-panel="skills"]');
     const tech = (data.technologies || []).join(", ");
@@ -217,12 +207,6 @@
       title: "",
       detail: "",
     });
-    renderList("timeline", "Timeline", timelineFields, {
-      when: "",
-      title: "",
-      text: "",
-      type: "work",
-    });
   }
 
   /* ---------- collect form → data ---------- */
@@ -241,7 +225,7 @@
     const profilePanel = $('[data-panel="profile"]');
     Object.assign(data.profile, readFields(profilePanel));
 
-    ["education", "experience", "projects", "skills", "achievements", "timeline"].forEach(
+    ["education", "experience", "projects", "skills", "achievements"].forEach(
       (key) => {
         const list = $(`[data-list="${key}"]`);
         if (!list) return;
@@ -380,7 +364,6 @@
     projects: "Projects",
     skills: "Skills",
     achievements: "Achievements",
-    timeline: "Timeline",
     publish: "Publish",
   };
 

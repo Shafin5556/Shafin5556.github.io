@@ -53,14 +53,15 @@
   document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
   document.getElementById("theme-toggle-mobile")?.addEventListener("click", toggleTheme);
 
-  /* ---------- Print CV ---------- */
+  /* ---------- Download CV (real PDF) ---------- */
   function downloadCv() {
-    const sheet = document.getElementById("print-sheet");
-    if (sheet) sheet.hidden = false;
-    window.print();
-    window.setTimeout(() => {
-      if (sheet) sheet.hidden = true;
-    }, 300);
+    const a = document.createElement("a");
+    a.href = "Shafin-Ahmed-Resume.pdf";
+    a.download = "Shafin-Ahmed-Resume.pdf";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   }
   document.getElementById("cv-download")?.addEventListener("click", downloadCv);
   document.getElementById("cv-download-mobile")?.addEventListener("click", downloadCv);
