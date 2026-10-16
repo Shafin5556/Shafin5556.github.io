@@ -3,16 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f4f7fb">
+  <meta name="theme-color" content="#f4f7fb" id="meta-theme-color">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="description" content="Shafin Ahmed — Software Engineer. Backend, full-stack, and scalable systems.">
   <title>Shafin Ahmed | Software Engineer</title>
   <link rel="icon" type="image/png" href="images/profile.png">
   <link rel="apple-touch-icon" href="images/profile.png">
-  <link rel="stylesheet" href="css/app.css?v=20261017e">
+  <link rel="stylesheet" href="css/app.css?v=20261018">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("sa-theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
 </head>
 <body>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
   <div class="boot-overlay" id="boot-overlay" aria-hidden="true">
     <div class="boot-mark">
       <img src="images/profile.png" alt="" width="56" height="56">
@@ -59,6 +72,17 @@
       </nav>
 
       <div class="sidebar-foot">
+        <div class="sidebar-actions">
+          <button class="ghost-btn magnetic" id="theme-toggle" type="button" aria-label="Toggle theme">
+            <svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5h1v3h-1V2zm0 17h1v3h-1v-3zM2 11h3v1H2v-1zm17 0h3v1h-3v-1zM4.2 4.2l2.1 2.1-.7.7-2.1-2.1.7-.7zm12.8 12.8l2.1 2.1-.7.7-2.1-2.1.7-.7zM19.8 4.2l.7.7-2.1 2.1-.7-.7 2.1-2.1zM6.3 17l.7.7-2.1 2.1-.7-.7L6.3 17z"/></svg>
+            <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2a9.9 9.9 0 00-1.4 19.7A10 10 0 1012.1 2z"/></svg>
+            <span id="theme-label">Dark</span>
+          </button>
+          <button class="ghost-btn magnetic" id="cv-download" type="button" aria-label="Download CV">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.2l3.1-3.1 1.4 1.4L12 17l-5.5-5.5 1.4-1.4L11 13.2V3zM5 19h14v2H5v-2z"/></svg>
+            CV
+          </button>
+        </div>
         <a class="ghost-link" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg>
           GitHub
@@ -79,17 +103,24 @@
             <h1 id="page-title">About</h1>
           </div>
         </div>
+        <div class="appbar-actions">
+          <button class="pill magnetic" id="theme-toggle-mobile" type="button" aria-label="Toggle theme">Theme</button>
+          <button class="pill pill-accent magnetic" id="cv-download-mobile" type="button">Download CV</button>
+        </div>
       </header>
 
       <div class="pages" id="pages">
         <!-- ABOUT -->
         <section class="page is-active" id="page-about" data-title="About" data-eyebrow="Profile">
-          <div class="home-profile reveal">
-            <img src="images/profile.png" alt="Shafin Ahmed" width="88" height="88">
-            <div>
-              <h2>Shafin Ahmed</h2>
-              <p>Software Engineer · Dhaka, Bangladesh</p>
-              <div class="status-row"><span class="dot"></span> Available for engineering work</div>
+          <div class="hero-shell reveal">
+            <canvas id="hero-canvas" class="hero-canvas" width="800" height="220" aria-hidden="true"></canvas>
+            <div class="home-profile hero-profile">
+              <img src="images/profile.png" alt="Shafin Ahmed" width="88" height="88">
+              <div>
+                <h2>Shafin Ahmed</h2>
+                <p>Software Engineer · Dhaka, Bangladesh</p>
+                <div class="status-row"><span class="dot"></span> Available for engineering work</div>
+              </div>
             </div>
           </div>
 
@@ -148,10 +179,39 @@
               </div>
             </article>
           </div>
+
+          <article class="settings-card reveal github-panel">
+            <div class="panel-head">
+              <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span> GitHub live</h3>
+              <a class="ghost-link" href="https://github.com/Shafin5556" target="_blank" rel="noopener">@Shafin5556</a>
+            </div>
+            <div class="gh-stats" id="gh-stats">
+              <div class="gh-stat"><strong id="gh-repos">—</strong><span>Repos</span></div>
+              <div class="gh-stat"><strong id="gh-followers">—</strong><span>Followers</span></div>
+              <div class="gh-stat"><strong id="gh-stars">—</strong><span>Stars</span></div>
+            </div>
+            <div class="gh-chart-wrap">
+              <img id="gh-chart" class="gh-chart" alt="GitHub contribution chart" loading="lazy" width="720" height="112">
+            </div>
+            <div class="gh-langs" id="gh-langs" aria-label="Top languages"></div>
+            <div class="gh-repos" id="gh-repos-list"></div>
+          </article>
         </section>
 
         <!-- EXPERIENCE -->
         <section class="page" id="page-experience" data-title="Experience" data-eyebrow="Career">
+          <article class="settings-card reveal">
+            <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 6h12M6 12h12M6 18h8"/></svg></span> Timeline</h3>
+            <div class="timeline" id="career-timeline">
+              <div class="tl-item" style="--i:0"><span class="tl-dot"></span><div class="tl-card"><em>Nov 2025 – Present</em><strong>Software Engineer · CSETech</strong><p>Production systems &amp; emerging tech at DIU.</p></div></div>
+              <div class="tl-item" style="--i:1"><span class="tl-dot"></span><div class="tl-card"><em>Jul 2025 – Present</em><strong>Full Stack Developer · Fawz Biz</strong><p>Custom systems, AI &amp; Big Data solutions.</p></div></div>
+              <div class="tl-item" style="--i:2"><span class="tl-dot"></span><div class="tl-card"><em>Jun 2024 – Present</em><strong>E-Family Court · Judiciary</strong><p>National digital case-filing infrastructure.</p></div></div>
+              <div class="tl-item" style="--i:3"><span class="tl-dot"></span><div class="tl-card"><em>2024 – Present</em><strong>Student Hub · DIU</strong><p>Multi-tenant student platform &amp; automation.</p></div></div>
+              <div class="tl-item" style="--i:4"><span class="tl-dot edu"></span><div class="tl-card"><em>May 2026 – Apr 2028</em><strong>M.Sc. CSE (Data Science) · DIU</strong><p>Graduate studies in progress.</p></div></div>
+              <div class="tl-item" style="--i:5"><span class="tl-dot edu"></span><div class="tl-card"><em>Aug 2021 – Aug 2025</em><strong>BS in CSE · DIU</strong><p>CGPA 3.30</p></div></div>
+              <div class="tl-item" style="--i:6"><span class="tl-dot edu"></span><div class="tl-card"><em>2019 – 2020</em><strong>HSC · Daffodil International College</strong><p>GPA 4.33</p></div></div>
+            </div>
+          </article>
           <article class="settings-card reveal">
             <div class="job">
               <img src="images/logo-csetech.png" alt="CSETech" width="56" height="56">
@@ -237,6 +297,31 @@
 
         <!-- SKILLS -->
         <section class="page" id="page-skills" data-title="Skills" data-eyebrow="Capabilities">
+          <article class="settings-card reveal radar-card">
+            <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 4a2 2 0 110 4 2 2 0 010-4z"/></svg></span> Capability map</h3>
+            <p class="muted radar-hint">Hover a ring to explore Backend, Automation, Data, and Delivery.</p>
+            <div class="radar-layout">
+              <div class="radar-wrap">
+                <svg class="tech-radar" id="tech-radar" viewBox="0 0 320 320" role="img" aria-label="Tech capability radar">
+                  <defs>
+                    <linearGradient id="radarFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#e91e8c" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#00b4f0" stop-opacity="0.28"/>
+                    </linearGradient>
+                  </defs>
+                  <g class="radar-grid"></g>
+                  <polygon class="radar-poly" id="radar-poly" fill="url(#radarFill)" stroke="url(#radarFill)" stroke-width="2"></polygon>
+                  <g class="radar-points" id="radar-points"></g>
+                  <g class="radar-labels" id="radar-labels"></g>
+                </svg>
+              </div>
+              <div class="radar-detail settings-card" id="radar-detail">
+                <strong id="radar-title">Backend</strong>
+                <p id="radar-desc">Laravel, PHP, Node.js, REST APIs — production platforms at scale.</p>
+                <div class="tags" id="radar-tags"><span>Laravel</span><span>PHP</span><span>Node.js</span><span>REST</span></div>
+              </div>
+            </div>
+          </article>
           <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg></span> Backend systems &amp; APIs</h3><p>Strong scripting and programming skills across Laravel (MVC), PHP, Python, Flask, and Node.js — building and maintaining production REST APIs and full-stack platforms.</p></article>
           <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-14h-7l1-6z"/></svg></span> Async work &amp; performance</h3><p>Experience with asynchronous processing, background jobs, automation pipelines, and caching patterns to keep applications responsive under real workloads.</p></article>
           <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v2h1a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a2 2 0 012-2h1V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v2h6V7a3 3 0 00-3-3z"/></svg></span> Secure &amp; scalable delivery</h3><p>Supports secure, scalable, and reliable application environments — from multi-tenant university systems to national-scale digital case-filing infrastructure.</p></article>
@@ -301,6 +386,40 @@
       <button class="tab" data-page="contact" type="button"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg><span>Contact</span></button>
     </nav>
   </div>
-  <script src="js/app.js?v=20261017e" defer></script>
+
+  <div id="print-sheet" class="print-sheet" hidden>
+    <header>
+      <h1>Shafin Ahmed</h1>
+      <p>Software Engineer · Dhaka, Bangladesh · shafinahmed5556@gmail.com · +880 1715-456868</p>
+      <p>github.com/Shafin5556 · linkedin.com/in/shafin5556 · shafin5556.github.io</p>
+    </header>
+    <section>
+      <h2>Summary</h2>
+      <p>Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <p><strong>Software Engineer</strong> — CSETech · Nov 2025 – Present</p>
+      <p><strong>Full Stack Developer</strong> — Fawz Biz Enterprises · Jul 2025 – Present</p>
+      <p><strong>Full Stack Developer</strong> — Office of the Students' Affairs, DIU · Jun 2024 – Jun 2026</p>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <p><strong>E-Family Court</strong> — efamilycourt.judiciary.gov.bd</p>
+      <p><strong>Student Hub</strong> — studentshub.daffodilvarsity.edu.bd</p>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <p><strong>M.Sc. in CSE (Data Science)</strong> — DIU · May 2026 – Apr 2028</p>
+      <p><strong>BS in CSE</strong> — DIU · Aug 2021 – Aug 2025 · CGPA 3.30</p>
+      <p><strong>HSC</strong> — Daffodil International College · 2019 – 2020 · GPA 4.33</p>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <p>Laravel, PHP, Python, Flask, Node.js, JavaScript, MySQL, NoSQL, REST APIs, Git, Automation, Data sync</p>
+    </section>
+  </div>
+
+  <script src="js/app.js?v=20261018" defer></script>
 </body>
 </html>
