@@ -1,31 +1,28 @@
-# Shafin Ahmed — Personal Portfolio
+# Shafin Ahmed — Portfolio App
 
-Professional personal website built with [Hugo](https://gohugo.io/) and hosted on GitHub Pages.
+Static, dependency-free portfolio with:
 
-## Live site
+- **Mobile:** native-app feel + bottom tab bar
+- **Desktop:** Windows 11 Settings–style left navigation
 
-**https://shafin5556.github.io/**
+No Hugo. No build step. No npm.
 
-## Repository
+## Live
 
-https://github.com/Shafin5556/Shafin5556.github.io
+https://shafin5556.github.io/
 
-## Local development
+## Local preview
 
-```bash
-hugo server -D
-```
-
-Open http://localhost:1313/
-
-## Build & deploy
+Open `index.html` in a browser, or:
 
 ```bash
-hugo --minify --baseURL "https://shafin5556.github.io/"
+npx --yes serve .
 ```
 
-Source code is on the `main` branch. The published site is on the `gh-pages` branch (GitHub Pages).
+## Structure
 
-## Content source
-
-Portfolio content is based on the CV and maintained in `data/resume.toml`.
+- `index.html` — app shell + content
+- `css/app.css` — layout & motion
+- `js/app.js` — page navigation
+- `images/` — logos & profile
+- `signature/` — Gmail signature pages

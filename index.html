@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f3f3">
+  <meta name="description" content="Shafin Ahmed — Software Engineer. Backend, full-stack, and scalable systems.">
+  <title>Shafin Ahmed | Software Engineer</title>
+  <link rel="icon" type="image/png" href="images/profile.png">
+  <link rel="apple-touch-icon" href="images/profile.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-top">
+        <div class="brand-chip">
+          <img src="images/profile.png" alt="" width="36" height="36">
+          <div>
+            <strong>Shafin Ahmed</strong>
+            <span>Software Engineer</span>
+          </div>
+        </div>
+        <label class="search-shell" for="nav-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.95 12.07l3.74 3.74-1.41 1.41-3.74-3.74A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+          <input id="nav-search" type="search" placeholder="Find a setting" autocomplete="off">
+        </label>
+      </div>
+
+      <nav class="side-nav" id="side-nav">
+        <button class="nav-item is-active" data-page="home" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-page="about" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg></span>
+          <span>About</span>
+        </button>
+        <button class="nav-item" data-page="experience" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 012 2v1h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h4V6h-4v1z"/></svg></span>
+          <span>Experience</span>
+        </button>
+        <button class="nav-item" data-page="projects" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg></span>
+          <span>Projects</span>
+        </button>
+        <button class="nav-item" data-page="skills" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2zm-7 16h14v2H5v-2z"/></svg></span>
+          <span>Skills</span>
+        </button>
+        <button class="nav-item" data-page="contact" type="button">
+          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
+          <span>Contact</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <a class="ghost-link" href="https://github.com/Shafin5556" target="_blank" rel="noopener">GitHub</a>
+        <a class="ghost-link" href="https://linkedin.com/in/shafin5556" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main class="stage" id="stage">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="page-eyebrow">Portfolio</p>
+          <h1 id="page-title">Home</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="pill" href="mailto:shafinahmed5556@gmail.com">Email</a>
+          <a class="pill pill-accent" href="https://shafinahmed.site" target="_blank" rel="noopener">Website</a>
+        </div>
+      </header>
+
+      <div class="pages" id="pages">
+        <!-- HOME -->
+        <section class="page is-active" id="page-home" data-title="Home" data-eyebrow="Overview">
+          <div class="hero-panel reveal">
+            <div class="hero-copy">
+              <p class="kicker">Windows-style portfolio app</p>
+              <h2>Building production-grade software that solves real-world problems.</h2>
+              <p>Backend & full-stack engineer focused on scalable systems, automation, and reliable delivery.</p>
+              <div class="hero-cta">
+                <button class="btn btn-primary" type="button" data-goto="projects">Open Projects</button>
+                <button class="btn" type="button" data-goto="experience">View Experience</button>
+              </div>
+            </div>
+            <div class="hero-card">
+              <img src="images/profile.png" alt="Shafin Ahmed" width="120" height="120">
+              <h3>Shafin Ahmed</h3>
+              <p>Software Engineer · Dhaka</p>
+              <div class="status-row">
+                <span class="dot"></span>
+                Available for impactful engineering work
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <button class="quick-tile reveal" type="button" data-goto="about">
+              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg></span>
+              <strong>About</strong>
+              <span>Profile & background</span>
+            </button>
+            <button class="quick-tile reveal" type="button" data-goto="experience">
+              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 012 2v1h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h4V6h-4v1z"/></svg></span>
+              <strong>Experience</strong>
+              <span>Roles & companies</span>
+            </button>
+            <button class="quick-tile reveal" type="button" data-goto="projects">
+              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg></span>
+              <strong>Projects</strong>
+              <span>Selected work</span>
+            </button>
+            <button class="quick-tile reveal" type="button" data-goto="skills">
+              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg></span>
+              <strong>Skills</strong>
+              <span>Capabilities</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="page" id="page-about" data-title="About" data-eyebrow="Profile">
+          <article class="settings-card reveal">
+            <div class="settings-row">
+              <img class="avatar-lg" src="images/profile.png" alt="Shafin Ahmed">
+              <div>
+                <h2>Shafin Ahmed</h2>
+                <p class="muted">Software Engineer · Dhaka, Bangladesh</p>
+              </div>
+            </div>
+            <p class="about-lead">Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
+            <div class="info-grid">
+              <div><span>Email</span><a href="mailto:shafinahmed5556@gmail.com">shafinahmed5556@gmail.com</a></div>
+              <div><span>Phone</span><a href="tel:+8801715456868">+880 1715-456868</a></div>
+              <div><span>Website</span><a href="https://shafinahmed.site" target="_blank" rel="noopener">shafinahmed.site</a></div>
+              <div><span>GitHub</span><a href="https://github.com/Shafin5556" target="_blank" rel="noopener">github.com/Shafin5556</a></div>
+            </div>
+          </article>
+
+          <article class="settings-card reveal">
+            <h3>Education</h3>
+            <div class="list-stack">
+              <div class="list-item">
+                <img src="images/logo-diu.png" alt="DIU" width="44" height="44">
+                <div>
+                  <strong>M.Sc. in CSE (Major in Data Science)</strong>
+                  <p>Daffodil International University · 1 May 2026 – 30 Apr 2028</p>
+                </div>
+                <span class="badge">Current</span>
+              </div>
+              <div class="list-item">
+                <img src="images/logo-diu.png" alt="DIU" width="44" height="44">
+                <div>
+                  <strong>BS in Computer Science and Engineering</strong>
+                  <p>Daffodil International University · Aug 2021 – Aug 2025 · CGPA 3.30</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <img src="images/logo-diu.png" alt="DIU" width="44" height="44">
+                <div>
+                  <strong>Higher Secondary Certificate</strong>
+                  <p>Daffodil International College · 2019 – 2020 · GPA 4.33</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="page" id="page-experience" data-title="Experience" data-eyebrow="Career">
+          <article class="settings-card reveal">
+            <div class="job">
+              <img src="images/logo-csetech.png" alt="CSETech" width="56" height="56">
+              <div>
+                <div class="job-top">
+                  <h3>Software Engineer</h3>
+                  <span>Nov 2025 – Present</span>
+                </div>
+                <p class="org">Center for Software Development & Emerging Tech (CSETech)</p>
+                <p class="muted">Daffodil Smart City (DSC), Birulia, Savar, Dhaka</p>
+                <p>CSETech is the specialized development hub at Daffodil International University dedicated to building production-grade software solutions. The center bridges industry requirements by driving R&amp;D in emerging technologies, fostering industry collaborations, and delivering scalable enterprise ecosystems.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card reveal">
+            <div class="job">
+              <img src="images/logo-fawz.png" alt="Fawz" width="56" height="56">
+              <div>
+                <div class="job-top">
+                  <h3>Full Stack Developer</h3>
+                  <span>Jul 2025 – Present</span>
+                </div>
+                <p class="org">Fawz Biz Enterprises</p>
+                <p class="muted">Extension Pallabi, Mirpur 11.5, Dhaka</p>
+                <p>Develop software products, custom systems, and integrated AI &amp; Big Data solutions that transform operations and decision-making.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card reveal">
+            <div class="job">
+              <img src="images/logo-osa.png" alt="OSA DIU" width="56" height="56">
+              <div>
+                <div class="job-top">
+                  <h3>Full Stack Developer</h3>
+                  <span>Jun 2024 – Jun 2026</span>
+                </div>
+                <p class="org">Office of the Students' Affairs — Daffodil International University</p>
+                <p class="muted">Dhaka, Bangladesh</p>
+                <p>Developed and maintained the official university student management platform, automating student services and administrative workflows.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="page" id="page-projects" data-title="Projects" data-eyebrow="Selected work">
+          <article class="settings-card project-card reveal">
+            <div class="project-head">
+              <img src="images/logo-efamily-court.png" alt="E-Family Court" width="64" height="64">
+              <div>
+                <h3>E-Family Court</h3>
+                <p class="org">National e-Judiciary Platform</p>
+                <p class="muted">Ministry of Law, Justice and Parliamentary Affairs · Jun 2024 – Present</p>
+              </div>
+            </div>
+            <p>Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings.</p>
+            <div class="tags"><span>Government</span><span>Laravel</span><span>Digital Transformation</span></div>
+            <a class="btn btn-primary" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">Open live project</a>
+          </article>
+
+          <article class="settings-card project-card reveal">
+            <div class="project-head">
+              <img src="images/logo-student-hub.png" alt="Student Hub" width="64" height="64">
+              <div>
+                <h3>Student Hub</h3>
+                <p class="org">Official Student Management Platform</p>
+                <p class="muted">Daffodil International University · 2024 – Present</p>
+              </div>
+            </div>
+            <p>Developed a centralized management ecosystem for DIU featuring automated orientation, multi-tenant club management, and enrollment sync from GoEdu.</p>
+            <div class="tags"><span>Full Stack</span><span>Automation</span><span>Event management</span></div>
+            <a class="btn btn-primary" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">Open live project</a>
+          </article>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="page" id="page-skills" data-title="Skills" data-eyebrow="Capabilities">
+          <article class="settings-card reveal"><h3>Backend systems & APIs</h3><p>Strong scripting and programming skills across Laravel (MVC), PHP, Python, Flask, and Node.js — building and maintaining production REST APIs and full-stack platforms.</p></article>
+          <article class="settings-card reveal"><h3>Async work & performance</h3><p>Experience with asynchronous processing, background jobs, automation pipelines, and caching patterns to keep applications responsive under real workloads.</p></article>
+          <article class="settings-card reveal"><h3>Secure & scalable delivery</h3><p>Supports secure, scalable, and reliable application environments — from multi-tenant university systems to national-scale digital case-filing infrastructure.</p></article>
+          <article class="settings-card reveal"><h3>Data & integration</h3><p>Hands-on with MySQL/NoSQL, SQL optimization, web scraping, and data synchronization engines that connect academic and operational systems end to end.</p></article>
+          <article class="settings-card reveal"><h3>Engineering practices</h3><p>Comfortable with Git/GitHub collaboration, OOP and MVC design, and shipping maintainable features in team and institutional settings.</p></article>
+          <article class="settings-card reveal">
+            <h3>Technologies</h3>
+            <div class="tags">
+              <span>Laravel</span><span>PHP</span><span>Python</span><span>Flask</span><span>Node.js</span><span>JavaScript</span><span>MySQL</span><span>NoSQL</span><span>REST APIs</span><span>Git</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="page" id="page-contact" data-title="Contact" data-eyebrow="Connect">
+          <article class="settings-card reveal">
+            <h2>Let's build something meaningful</h2>
+            <p class="muted">Open to collaboration, engineering roles, and impactful software projects.</p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:shafinahmed5556@gmail.com">shafinahmed5556@gmail.com</a>
+              <a class="btn" href="https://linkedin.com/in/shafin5556" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="https://github.com/Shafin5556" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="https://shafinahmed.site" target="_blank" rel="noopener">Website</a>
+            </div>
+          </article>
+          <article class="settings-card reveal">
+            <h3>Achievements</h3>
+            <div class="list-stack compact">
+              <div class="list-item"><div><strong>Datathon Contest 2023</strong><p>1st Runner-up</p></div></div>
+              <div class="list-item"><div><strong>DIU Take-off Programming Contest</strong><p>Top 30</p></div></div>
+              <div class="list-item"><div><strong>Project Showcase</strong><p>Organized by Department of CIS</p></div></div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile navigation">
+      <button class="tab is-active" data-page="home" type="button"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg><span>Home</span></button>
+      <button class="tab" data-page="about" type="button"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg><span>About</span></button>
+      <button class="tab" data-page="experience" type="button"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 012 2v1h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h4V6h-4v1z"/></svg><span>Experience</span></button>
+      <button class="tab" data-page="projects" type="button"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg><span>Projects</span></button>
+      <button class="tab" data-page="skills" type="button"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg><span>Skills</span></button>
+      <button class="tab" data-page="contact" type="button"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg><span>Contact</span></button>
+    </nav>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
