@@ -501,11 +501,55 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
 .project-domain svg { width: 0.95rem; height: 0.95rem; flex-shrink: 0; }
 .project-card .btn { width: fit-content; }
 .about-links {
-  margin-top: 0.85rem;
+  margin-top: 0.95rem;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.72);
+  grid-template-columns: 1fr !important;
 }
 .about-links .quick-tile {
   box-shadow: none;
-  background: rgba(255,255,255,0.72);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 0.8rem 0.95rem;
+  min-height: 3.4rem;
+  grid-template-columns: auto 1fr;
+}
+.about-links .quick-tile:last-child { border-bottom: 0; }
+.about-links .quick-tile:hover {
+  transform: none;
+  box-shadow: none;
+  background: rgba(196, 43, 28, 0.06);
+}
+.about-links .tile-ico {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 10px;
+}
+.about-links .tile-ico svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.about-links .tile-text strong {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.18rem;
+}
+.about-links .tile-text span {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .contact-grid { margin-top: 0.15rem; }
 
