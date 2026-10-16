@@ -10,7 +10,7 @@
   <title>Shafin Ahmed | Software Engineer</title>
   <link rel="icon" type="image/png" href="images/profile.png">
   <link rel="apple-touch-icon" href="images/profile.png">
-  <link rel="stylesheet" href="css/app.css?v=20261018d">
+  <link rel="stylesheet" href="css/app.css?v=20261018e">
   <script>
     (function () {
       try {
@@ -37,8 +37,8 @@
         <div class="brand-chip">
           <img src="images/profile.png" alt="" width="36" height="36">
           <div>
-            <strong>Shafin Ahmed</strong>
-            <span>Software Engineer</span>
+            <strong data-bind-name>Shafin Ahmed</strong>
+            <span data-bind-role>Software Engineer</span>
           </div>
         </div>
         <label class="search-shell" for="nav-search">
@@ -116,34 +116,34 @@
             <div class="home-profile hero-profile">
               <img src="images/profile.png" alt="Shafin Ahmed" width="88" height="88">
               <div>
-                <h2>Shafin Ahmed</h2>
-                <p>Software Engineer · Dhaka, Bangladesh</p>
-                <div class="status-row"><span class="dot"></span> Available for engineering work</div>
+                <h2 id="bind-hero-name">Shafin Ahmed</h2>
+                <p id="bind-hero-line">Software Engineer · Dhaka, Bangladesh</p>
+                <div class="status-row"><span class="dot"></span> <span id="bind-status">Available for engineering work</span></div>
               </div>
             </div>
           </div>
 
           <article class="settings-card reveal">
-            <p class="about-lead">Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
+            <p class="about-lead" id="bind-bio">Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
           </article>
 
           <div class="about-split reveal">
             <article class="settings-card about-contacts">
               <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span> Details</h3>
               <div class="quick-grid about-links">
-                <a class="quick-tile" href="mailto:shafinahmed5556@gmail.com">
+                <a class="quick-tile" id="bind-email-tile" href="mailto:shafinahmed5556@gmail.com">
                   <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
                   <div class="tile-text"><strong>Email</strong><span>shafinahmed5556@gmail.com</span></div>
                 </a>
-                <a class="quick-tile" href="tel:+8801715456868">
+                <a class="quick-tile" id="bind-phone-tile" href="tel:+8801715456868">
                   <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24c1.1.37 2.3.57 3.5.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.4.57 3.5a1 1 0 01-.24 1L6.6 10.8z"/></svg></span>
                   <div class="tile-text"><strong>Phone</strong><span>+880 1715-456868</span></div>
                 </a>
-                <a class="quick-tile" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
+                <a class="quick-tile" id="bind-portfolio-tile" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
                   <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
                   <div class="tile-text"><strong>Portfolio</strong><span>shafin5556.github.io</span></div>
                 </a>
-                <a class="quick-tile" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
+                <a class="quick-tile" id="bind-github-tile" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
                   <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span>
                   <div class="tile-text"><strong>GitHub</strong><span>github.com/Shafin5556</span></div>
                 </a>
@@ -152,37 +152,14 @@
 
             <article class="settings-card about-education">
               <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5zm0 8.5L4.5 8 12 4.5 19.5 8 12 11.5zM4 10.2v5.3L12 20l8-4.5v-5.3L12 14.7 4 10.2z"/></svg></span> Education</h3>
-              <div class="list-stack">
-                <div class="list-item">
-                  <img src="images/logo-diu.png" alt="DIU" width="44" height="44">
-                  <div>
-                    <strong>M.Sc. in CSE (Major in Data Science)</strong>
-                    <p>Daffodil International University · 1 May 2026 – 30 Apr 2028</p>
-                  </div>
-                  <span class="badge">Current</span>
-                </div>
-                <div class="list-item">
-                  <img src="images/logo-diu.png" alt="DIU" width="44" height="44">
-                  <div>
-                    <strong>BS in Computer Science and Engineering</strong>
-                    <p>Daffodil International University · Aug 2021 – Aug 2025 · CGPA 3.30</p>
-                  </div>
-                </div>
-                <div class="list-item">
-                  <img src="images/logo-college.jpeg" alt="Daffodil International College" width="44" height="44">
-                  <div>
-                    <strong>Higher Secondary Certificate</strong>
-                    <p>Daffodil International College · 2019 – 2020 · GPA 4.33</p>
-                  </div>
-                </div>
-              </div>
+              <div class="list-stack" id="bind-education"></div>
             </article>
           </div>
 
           <article class="settings-card reveal github-panel">
             <div class="panel-head">
               <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span> GitHub contributions</h3>
-              <a class="ghost-link" href="https://github.com/Shafin5556" target="_blank" rel="noopener">@Shafin5556</a>
+              <a class="ghost-link" id="bind-gh-handle" href="https://github.com/Shafin5556" target="_blank" rel="noopener">@Shafin5556</a>
             </div>
             <p class="gh-total"><strong id="gh-total-count">2,236</strong> <span id="gh-total-label">contributions in the last year</span></p>
             <div class="year-toggles" id="year-toggles" role="tablist" aria-label="Contribution year"></div>
@@ -201,139 +178,46 @@
         <section class="page" id="page-experience" data-title="Experience" data-eyebrow="Career">
           <article class="settings-card reveal">
             <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M6 6h12M6 12h12M6 18h8"/></svg></span> Timeline</h3>
-            <div class="timeline" id="career-timeline">
-              <div class="tl-item" style="--i:0"><span class="tl-dot"></span><div class="tl-card"><em>Nov 2025 – Present</em><strong>Software Engineer · CSETech</strong><p>Production systems &amp; emerging tech at DIU.</p></div></div>
-              <div class="tl-item" style="--i:1"><span class="tl-dot"></span><div class="tl-card"><em>Jul 2025 – Present</em><strong>Full Stack Developer · Fawz Biz</strong><p>Custom systems, AI &amp; Big Data solutions.</p></div></div>
-              <div class="tl-item" style="--i:2"><span class="tl-dot"></span><div class="tl-card"><em>Jun 2024 – Present</em><strong>E-Family Court · Judiciary</strong><p>National digital case-filing infrastructure.</p></div></div>
-              <div class="tl-item" style="--i:3"><span class="tl-dot"></span><div class="tl-card"><em>2024 – Present</em><strong>Student Hub · DIU</strong><p>Multi-tenant student platform &amp; automation.</p></div></div>
-              <div class="tl-item" style="--i:4"><span class="tl-dot edu"></span><div class="tl-card"><em>May 2026 – Apr 2028</em><strong>M.Sc. CSE (Data Science) · DIU</strong><p>Graduate studies in progress.</p></div></div>
-              <div class="tl-item" style="--i:5"><span class="tl-dot edu"></span><div class="tl-card"><em>Aug 2021 – Aug 2025</em><strong>BS in CSE · DIU</strong><p>CGPA 3.30</p></div></div>
-              <div class="tl-item" style="--i:6"><span class="tl-dot edu"></span><div class="tl-card"><em>2019 – 2020</em><strong>HSC · Daffodil International College</strong><p>GPA 4.33</p></div></div>
-            </div>
+            <div class="timeline" id="career-timeline"></div>
           </article>
-          <article class="settings-card reveal">
-            <div class="job">
-              <img src="images/logo-csetech.png" alt="CSETech" width="56" height="56">
-              <div>
-                <div class="job-top"><h3>Software Engineer</h3><span>Nov 2025 – Present</span></div>
-                <p class="org">Center for Software Development & Emerging Tech (CSETech)</p>
-                <p class="muted">Daffodil Smart City (DSC), Birulia, Savar, Dhaka</p>
-                <p>CSETech is the specialized development hub at Daffodil International University dedicated to building production-grade software solutions. The center bridges industry requirements by driving R&amp;D in emerging technologies, fostering industry collaborations, and delivering scalable enterprise ecosystems.</p>
-              </div>
-            </div>
-          </article>
-          <article class="settings-card reveal">
-            <div class="job">
-              <img src="images/logo-fawz.png" alt="Fawz" width="56" height="56">
-              <div>
-                <div class="job-top"><h3>Full Stack Developer</h3><span>Jul 2025 – Present</span></div>
-                <p class="org">Fawz Biz Enterprises</p>
-                <p class="muted">Extension Pallabi, Mirpur 11.5, Dhaka</p>
-                <p>Develop software products, custom systems, and integrated AI &amp; Big Data solutions that transform operations and decision-making.</p>
-              </div>
-            </div>
-          </article>
-          <article class="settings-card reveal">
-            <div class="job">
-              <img src="images/logo-osa.png" alt="OSA DIU" width="56" height="56">
-              <div>
-                <div class="job-top"><h3>Full Stack Developer</h3><span>Jun 2024 – Jun 2026</span></div>
-                <p class="org">Office of the Students' Affairs — Daffodil International University</p>
-                <p class="muted">Dhaka, Bangladesh</p>
-                <p>Developed and maintained the official university student management platform, automating student services and administrative workflows.</p>
-              </div>
-            </div>
-          </article>
+          <div id="bind-experience"></div>
         </section>
 
         <!-- PROJECTS -->
         <section class="page" id="page-projects" data-title="Projects" data-eyebrow="Selected work">
-          <article class="settings-card project-card reveal">
-            <div class="project-head">
-              <img src="images/logo-efamily-court.png" alt="E-Family Court" width="64" height="64">
-              <div>
-                <h3>E-Family Court</h3>
-                <p class="org">National e-Judiciary Platform</p>
-                <p class="muted">Ministry of Law, Justice and Parliamentary Affairs · Jun 2024 – Present</p>
-              </div>
-            </div>
-            <p>Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings.</p>
-            <div class="tags"><span>Government</span><span>Laravel</span><span>Digital Transformation</span></div>
-            <div class="project-actions">
-              <a class="project-domain" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17.9V14h4.9A8.05 8.05 0 0113 19.9zM4.1 14H9v5.9A8.05 8.05 0 014.1 14zM4.1 10A8.05 8.05 0 019 4.1V10H4.1zM13 4.1A8.05 8.05 0 0119.9 10H13V4.1z"/></svg>
-                efamilycourt.judiciary.gov.bd
-              </a>
-              <a class="btn btn-primary" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
-                Open live project
-              </a>
-            </div>
-          </article>
-          <article class="settings-card project-card reveal">
-            <div class="project-head">
-              <img src="images/logo-student-hub.png" alt="Student Hub" width="64" height="64">
-              <div>
-                <h3>Student Hub</h3>
-                <p class="org">Official Student Management Platform</p>
-                <p class="muted">Daffodil International University · 2024 – Present</p>
-              </div>
-            </div>
-            <p>Developed a centralized management ecosystem for DIU featuring automated orientation, multi-tenant club management, and enrollment sync from GoEdu.</p>
-            <div class="tags"><span>Full Stack</span><span>Automation</span><span>Event management</span></div>
-            <div class="project-actions">
-              <a class="project-domain" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17.9V14h4.9A8.05 8.05 0 0113 19.9zM4.1 14H9v5.9A8.05 8.05 0 014.1 14zM4.1 10A8.05 8.05 0 019 4.1V10H4.1zM13 4.1A8.05 8.05 0 0119.9 10H13V4.1z"/></svg>
-                studentshub.daffodilvarsity.edu.bd
-              </a>
-              <a class="btn btn-primary" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
-                Open live project
-              </a>
-            </div>
-          </article>
+          <div id="bind-projects"></div>
         </section>
 
         <!-- SKILLS -->
         <section class="page" id="page-skills" data-title="Skills" data-eyebrow="Capabilities">
-          <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg></span> Backend systems &amp; APIs</h3><p>Strong scripting and programming skills across Laravel (MVC), PHP, Python, Flask, and Node.js — building and maintaining production REST APIs and full-stack platforms.</p></article>
-          <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-14h-7l1-6z"/></svg></span> Async work &amp; performance</h3><p>Experience with asynchronous processing, background jobs, automation pipelines, and caching patterns to keep applications responsive under real workloads.</p></article>
-          <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5v2h1a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a2 2 0 012-2h1V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v2h6V7a3 3 0 00-3-3z"/></svg></span> Secure &amp; scalable delivery</h3><p>Supports secure, scalable, and reliable application environments — from multi-tenant university systems to national-scale digital case-filing infrastructure.</p></article>
-          <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4V5zm0 6h7v8H4v-8zm9 0h7v8h-7v-8z"/></svg></span> Data &amp; integration</h3><p>Hands-on with MySQL/NoSQL, SQL optimization, web scraping, and data synchronization engines that connect academic and operational systems end to end.</p></article>
-          <article class="settings-card reveal"><h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg></span> Engineering practices</h3><p>Comfortable with Git/GitHub collaboration, OOP and MVC design, and shipping maintainable features in team and institutional settings.</p></article>
-          <article class="settings-card reveal">
-            <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg></span> Technologies</h3>
-            <div class="tags">
-              <span>Laravel</span><span>PHP</span><span>Python</span><span>Flask</span><span>Node.js</span><span>JavaScript</span><span>MySQL</span><span>NoSQL</span><span>REST APIs</span><span>Git</span>
-            </div>
-          </article>
+          <div id="bind-skills"></div>
         </section>
 
         <!-- CONTACT -->
         <section class="page" id="page-contact" data-title="Contact" data-eyebrow="Connect">
-          <p class="home-tagline reveal">Open to collaboration, engineering roles, and impactful software projects.</p>
+          <p class="home-tagline reveal" id="bind-tagline">Open to collaboration, engineering roles, and impactful software projects.</p>
           <div class="quick-grid contact-grid">
-            <a class="quick-tile reveal" href="mailto:shafinahmed5556@gmail.com">
+            <a class="quick-tile reveal" id="bind-c-email" href="mailto:shafinahmed5556@gmail.com">
               <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
               <div class="tile-text"><strong>Email</strong><span>shafinahmed5556@gmail.com</span></div>
               <span class="chev" aria-hidden="true">›</span>
             </a>
-            <a class="quick-tile reveal" href="tel:+8801715456868">
+            <a class="quick-tile reveal" id="bind-c-phone" href="tel:+8801715456868">
               <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24c1.1.37 2.3.57 3.5.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.4.57 3.5a1 1 0 01-.24 1L6.6 10.8z"/></svg></span>
               <div class="tile-text"><strong>Phone</strong><span>+880 1715-456868</span></div>
               <span class="chev" aria-hidden="true">›</span>
             </a>
-            <a class="quick-tile reveal" href="https://linkedin.com/in/shafin5556" target="_blank" rel="noopener">
+            <a class="quick-tile reveal" id="bind-c-linkedin" href="https://linkedin.com/in/shafin5556" target="_blank" rel="noopener">
               <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V21h3.38V8.5zM5.25 3A1.97 1.97 0 003.3 4.96 1.97 1.97 0 005.25 6.9 1.97 1.97 0 007.2 4.96 1.97 1.97 0 005.25 3zM21 21h-3.37v-6.55c0-1.56-.03-3.56-2.17-3.56-2.17 0-2.5 1.7-2.5 3.45V21H9.58V8.5h3.24v1.7h.05c.45-.85 1.55-1.75 3.19-1.75 3.41 0 4.04 2.25 4.04 5.17V21z"/></svg></span>
               <div class="tile-text"><strong>LinkedIn</strong><span>linkedin.com/in/shafin5556</span></div>
               <span class="chev" aria-hidden="true">›</span>
             </a>
-            <a class="quick-tile reveal" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
+            <a class="quick-tile reveal" id="bind-c-github" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
               <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span>
               <div class="tile-text"><strong>GitHub</strong><span>github.com/Shafin5556</span></div>
               <span class="chev" aria-hidden="true">›</span>
             </a>
-            <a class="quick-tile reveal" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
+            <a class="quick-tile reveal" id="bind-c-portfolio" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
               <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
               <div class="tile-text"><strong>Portfolio</strong><span>shafin5556.github.io</span></div>
               <span class="chev" aria-hidden="true">›</span>
@@ -342,11 +226,7 @@
 
           <article class="settings-card reveal">
             <h3><span class="inline-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg></span> Achievements</h3>
-            <div class="list-stack compact">
-              <div class="list-item"><div><strong>Datathon Contest 2023</strong><p>1st Runner-up</p></div></div>
-              <div class="list-item"><div><strong>DIU Take-off Programming Contest</strong><p>Top 30</p></div></div>
-              <div class="list-item"><div><strong>Project Showcase</strong><p>Organized by Department of CIS</p></div></div>
-            </div>
+            <div class="list-stack compact" id="bind-achievements"></div>
           </article>
         </section>
       </div>
@@ -363,37 +243,33 @@
 
   <div id="print-sheet" class="print-sheet" hidden>
     <header>
-      <h1>Shafin Ahmed</h1>
-      <p>Software Engineer · Dhaka, Bangladesh · shafinahmed5556@gmail.com · +880 1715-456868</p>
-      <p>github.com/Shafin5556 · linkedin.com/in/shafin5556 · shafin5556.github.io</p>
+      <h1 id="print-name">Shafin Ahmed</h1>
+      <p id="print-header-line">Software Engineer · Dhaka, Bangladesh · shafinahmed5556@gmail.com · +880 1715-456868</p>
+      <p id="print-links-line">github.com/Shafin5556 · linkedin.com/in/shafin5556 · shafin5556.github.io</p>
     </header>
     <section>
       <h2>Summary</h2>
-      <p>Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
+      <p id="print-bio"></p>
     </section>
     <section>
       <h2>Experience</h2>
-      <p><strong>Software Engineer</strong> — CSETech · Nov 2025 – Present</p>
-      <p><strong>Full Stack Developer</strong> — Fawz Biz Enterprises · Jul 2025 – Present</p>
-      <p><strong>Full Stack Developer</strong> — Office of the Students' Affairs, DIU · Jun 2024 – Jun 2026</p>
+      <div id="print-experience"></div>
     </section>
     <section>
       <h2>Projects</h2>
-      <p><strong>E-Family Court</strong> — efamilycourt.judiciary.gov.bd</p>
-      <p><strong>Student Hub</strong> — studentshub.daffodilvarsity.edu.bd</p>
+      <div id="print-projects"></div>
     </section>
     <section>
       <h2>Education</h2>
-      <p><strong>M.Sc. in CSE (Data Science)</strong> — DIU · May 2026 – Apr 2028</p>
-      <p><strong>BS in CSE</strong> — DIU · Aug 2021 – Aug 2025 · CGPA 3.30</p>
-      <p><strong>HSC</strong> — Daffodil International College · 2019 – 2020 · GPA 4.33</p>
+      <div id="print-education"></div>
     </section>
     <section>
       <h2>Skills</h2>
-      <p>Laravel, PHP, Python, Flask, Node.js, JavaScript, MySQL, NoSQL, REST APIs, Git, Automation, Data sync</p>
+      <p id="print-skills"></p>
     </section>
   </div>
 
-  <script src="js/app.js?v=20261018d" defer></script>
+  <script src="js/content.js?v=20261018e" defer></script>
+  <script src="js/app.js?v=20261018e" defer></script>
 </body>
 </html>

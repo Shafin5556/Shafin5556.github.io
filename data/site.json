@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "githubUser": "Shafin5556",
+    "githubRepo": "Shafin5556/Shafin5556.github.io",
+    "publishBranch": "gh-pages",
+    "contentPath": "data/site.json"
+  },
+  "profile": {
+    "name": "Shafin Ahmed",
+    "role": "Software Engineer",
+    "location": "Dhaka, Bangladesh",
+    "status": "Available for engineering work",
+    "bio": "Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.",
+    "tagline": "Open to collaboration, engineering roles, and impactful software projects.",
+    "email": "shafinahmed5556@gmail.com",
+    "phone": "+880 1715-456868",
+    "phoneHref": "+8801715456868",
+    "portfolio": "shafin5556.github.io",
+    "portfolioUrl": "https://shafin5556.github.io/",
+    "github": "github.com/Shafin5556",
+    "githubUrl": "https://github.com/Shafin5556",
+    "linkedin": "linkedin.com/in/shafin5556",
+    "linkedinUrl": "https://linkedin.com/in/shafin5556"
+  },
+  "education": [
+    {
+      "title": "M.Sc. in CSE (Major in Data Science)",
+      "detail": "Daffodil International University · 1 May 2026 – 30 Apr 2028",
+      "logo": "images/logo-diu.png",
+      "logoAlt": "DIU",
+      "badge": "Current"
+    },
+    {
+      "title": "BS in Computer Science and Engineering",
+      "detail": "Daffodil International University · Aug 2021 – Aug 2025 · CGPA 3.30",
+      "logo": "images/logo-diu.png",
+      "logoAlt": "DIU",
+      "badge": ""
+    },
+    {
+      "title": "Higher Secondary Certificate",
+      "detail": "Daffodil International College · 2019 – 2020 · GPA 4.33",
+      "logo": "images/logo-college.jpeg",
+      "logoAlt": "Daffodil International College",
+      "badge": ""
+    }
+  ],
+  "timeline": [
+    {
+      "when": "Nov 2025 – Present",
+      "title": "Software Engineer · CSETech",
+      "text": "Production systems & emerging tech at DIU.",
+      "type": "work"
+    },
+    {
+      "when": "Jul 2025 – Present",
+      "title": "Full Stack Developer · Fawz Biz",
+      "text": "Custom systems, AI & Big Data solutions.",
+      "type": "work"
+    },
+    {
+      "when": "Jun 2024 – Present",
+      "title": "E-Family Court · Judiciary",
+      "text": "National digital case-filing infrastructure.",
+      "type": "work"
+    },
+    {
+      "when": "2024 – Present",
+      "title": "Student Hub · DIU",
+      "text": "Multi-tenant student platform & automation.",
+      "type": "work"
+    },
+    {
+      "when": "May 2026 – Apr 2028",
+      "title": "M.Sc. CSE (Data Science) · DIU",
+      "text": "Graduate studies in progress.",
+      "type": "edu"
+    },
+    {
+      "when": "Aug 2021 – Aug 2025",
+      "title": "BS in CSE · DIU",
+      "text": "CGPA 3.30",
+      "type": "edu"
+    },
+    {
+      "when": "2019 – 2020",
+      "title": "HSC · Daffodil International College",
+      "text": "GPA 4.33",
+      "type": "edu"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "dates": "Nov 2025 – Present",
+      "org": "Center for Software Development & Emerging Tech (CSETech)",
+      "place": "Daffodil Smart City (DSC), Birulia, Savar, Dhaka",
+      "text": "CSETech is the specialized development hub at Daffodil International University dedicated to building production-grade software solutions. The center bridges industry requirements by driving R&D in emerging technologies, fostering industry collaborations, and delivering scalable enterprise ecosystems.",
+      "logo": "images/logo-csetech.png",
+      "logoAlt": "CSETech"
+    },
+    {
+      "title": "Full Stack Developer",
+      "dates": "Jul 2025 – Present",
+      "org": "Fawz Biz Enterprises",
+      "place": "Extension Pallabi, Mirpur 11.5, Dhaka",
+      "text": "Develop software products, custom systems, and integrated AI & Big Data solutions that transform operations and decision-making.",
+      "logo": "images/logo-fawz.png",
+      "logoAlt": "Fawz"
+    },
+    {
+      "title": "Full Stack Developer",
+      "dates": "Jun 2024 – Jun 2026",
+      "org": "Office of the Students' Affairs — Daffodil International University",
+      "place": "Dhaka, Bangladesh",
+      "text": "Developed and maintained the official university student management platform, automating student services and administrative workflows.",
+      "logo": "images/logo-osa.png",
+      "logoAlt": "OSA DIU"
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Family Court",
+      "org": "National e-Judiciary Platform",
+      "meta": "Ministry of Law, Justice and Parliamentary Affairs · Jun 2024 – Present",
+      "text": "Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings.",
+      "tags": ["Government", "Laravel", "Digital Transformation"],
+      "domain": "efamilycourt.judiciary.gov.bd",
+      "url": "https://efamilycourt.judiciary.gov.bd/",
+      "logo": "images/logo-efamily-court.png",
+      "logoAlt": "E-Family Court"
+    },
+    {
+      "title": "Student Hub",
+      "org": "Official Student Management Platform",
+      "meta": "Daffodil International University · 2024 – Present",
+      "text": "Developed a centralized management ecosystem for DIU featuring automated orientation, multi-tenant club management, and enrollment sync from GoEdu.",
+      "tags": ["Full Stack", "Automation", "Event management"],
+      "domain": "studentshub.daffodilvarsity.edu.bd",
+      "url": "https://studentshub.daffodilvarsity.edu.bd/",
+      "logo": "images/logo-student-hub.png",
+      "logoAlt": "Student Hub"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Backend systems & APIs",
+      "text": "Strong scripting and programming skills across Laravel (MVC), PHP, Python, Flask, and Node.js — building and maintaining production REST APIs and full-stack platforms."
+    },
+    {
+      "title": "Async work & performance",
+      "text": "Experience with asynchronous processing, background jobs, automation pipelines, and caching patterns to keep applications responsive under real workloads."
+    },
+    {
+      "title": "Secure & scalable delivery",
+      "text": "Supports secure, scalable, and reliable application environments — from multi-tenant university systems to national-scale digital case-filing infrastructure."
+    },
+    {
+      "title": "Data & integration",
+      "text": "Hands-on with MySQL/NoSQL, SQL optimization, web scraping, and data synchronization engines that connect academic and operational systems end to end."
+    },
+    {
+      "title": "Engineering practices",
+      "text": "Comfortable with Git/GitHub collaboration, OOP and MVC design, and shipping maintainable features in team and institutional settings."
+    }
+  ],
+  "technologies": ["Laravel", "PHP", "Python", "Flask", "Node.js", "JavaScript", "MySQL", "NoSQL", "REST APIs", "Git"],
+  "achievements": [
+    {
+      "title": "Datathon Contest 2023",
+      "detail": "1st Runner-up"
+    },
+    {
+      "title": "DIU Take-off Programming Contest",
+      "detail": "Top 30"
+    },
+    {
+      "title": "Project Showcase",
+      "detail": "Organized by Department of CIS"
+    }
+  ]
+}
