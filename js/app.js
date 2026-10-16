@@ -34,7 +34,7 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     try {
-      localStorage.setItem("sa-theme", theme);
+      localStorage.setItem("sa-theme-v2", theme);
     } catch (_) {}
     if (metaTheme) metaTheme.content = theme === "dark" ? "#0c1018" : "#f4f7fb";
     const label = document.getElementById("theme-label");
