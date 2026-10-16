@@ -30,11 +30,7 @@
       </div>
 
       <nav class="side-nav" id="side-nav">
-        <button class="nav-item is-active" data-page="home" type="button">
-          <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
-          <span>Home</span>
-        </button>
-        <button class="nav-item" data-page="about" type="button">
+        <button class="nav-item is-active" data-page="about" type="button">
           <span class="nav-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg></span>
           <span>About</span>
         </button>
@@ -73,82 +69,46 @@
         <div class="appbar-left">
           <img class="appbar-avatar" src="images/profile.png" alt="" width="34" height="34">
           <div>
-            <p class="eyebrow" id="page-eyebrow">Overview</p>
-            <h1 id="page-title">Home</h1>
+            <p class="eyebrow" id="page-eyebrow">Profile</p>
+            <h1 id="page-title">About</h1>
           </div>
         </div>
       </header>
 
       <div class="pages" id="pages">
-        <!-- HOME -->
-        <section class="page is-active" id="page-home" data-title="Home" data-eyebrow="Overview">
+        <!-- ABOUT -->
+        <section class="page is-active" id="page-about" data-title="About" data-eyebrow="Profile">
           <div class="home-profile reveal">
             <img src="images/profile.png" alt="Shafin Ahmed" width="88" height="88">
             <div>
               <h2>Shafin Ahmed</h2>
-              <p>Software Engineer · Dhaka</p>
+              <p>Software Engineer · Dhaka, Bangladesh</p>
               <div class="status-row"><span class="dot"></span> Available for engineering work</div>
             </div>
           </div>
 
-          <p class="home-tagline reveal">Building production-grade software that solves real-world problems.</p>
-
-          <div class="quick-grid">
-            <button class="quick-tile reveal" type="button" data-goto="about">
-              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg></span>
-              <div class="tile-text"><strong>About</strong><span>Profile &amp; background</span></div>
-              <span class="chev" aria-hidden="true">›</span>
-            </button>
-            <button class="quick-tile reveal" type="button" data-goto="experience">
-              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 012 2v1h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h4V6h-4v1z"/></svg></span>
-              <div class="tile-text"><strong>Experience</strong><span>Roles &amp; companies</span></div>
-              <span class="chev" aria-hidden="true">›</span>
-            </button>
-            <button class="quick-tile reveal" type="button" data-goto="projects">
-              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg></span>
-              <div class="tile-text"><strong>Projects</strong><span>Selected work</span></div>
-              <span class="chev" aria-hidden="true">›</span>
-            </button>
-            <button class="quick-tile reveal" type="button" data-goto="skills">
-              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg></span>
-              <div class="tile-text"><strong>Skills</strong><span>Capabilities</span></div>
-              <span class="chev" aria-hidden="true">›</span>
-            </button>
-            <button class="quick-tile reveal" type="button" data-goto="contact">
-              <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
-              <div class="tile-text"><strong>Contact</strong><span>Get in touch</span></div>
-              <span class="chev" aria-hidden="true">›</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="page" id="page-about" data-title="About" data-eyebrow="Profile">
           <article class="settings-card reveal">
-            <div class="settings-row">
-              <img class="avatar-lg" src="images/profile.png" alt="Shafin Ahmed">
-              <div>
-                <h2>Shafin Ahmed</h2>
-                <p class="muted">Software Engineer · Dhaka, Bangladesh</p>
-              </div>
-            </div>
             <p class="about-lead">Software Engineer with experience in backend development and system automation. Contributed to large-scale projects. Passionate about solving real-world problems through scalable and efficient solutions.</p>
-            <div class="info-grid">
-              <a class="info-chip" href="mailto:shafinahmed5556@gmail.com">
-                <span class="chip-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
-                <div><span>Email</span><strong>shafinahmed5556@gmail.com</strong></div>
+            <div class="quick-grid about-links">
+              <a class="quick-tile" href="mailto:shafinahmed5556@gmail.com">
+                <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6zm2 2v2.2l6 3.6 6-3.6V8l-6 3.6L6 8z"/></svg></span>
+                <div class="tile-text"><strong>Email</strong><span>shafinahmed5556@gmail.com</span></div>
+                <span class="chev" aria-hidden="true">›</span>
               </a>
-              <a class="info-chip" href="tel:+8801715456868">
-                <span class="chip-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24c1.1.37 2.3.57 3.5.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.4.57 3.5a1 1 0 01-.24 1L6.6 10.8z"/></svg></span>
-                <div><span>Phone</span><strong>+880 1715-456868</strong></div>
+              <a class="quick-tile" href="tel:+8801715456868">
+                <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24c1.1.37 2.3.57 3.5.57a1 1 0 011 1V20a1 1 0 01-1 1C10.4 21 3 13.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.2.2 2.4.57 3.5a1 1 0 01-.24 1L6.6 10.8z"/></svg></span>
+                <div class="tile-text"><strong>Phone</strong><span>+880 1715-456868</span></div>
+                <span class="chev" aria-hidden="true">›</span>
               </a>
-              <a class="info-chip" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
-                <span class="chip-ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
-                <div><span>Portfolio</span><strong>shafin5556.github.io</strong></div>
+              <a class="quick-tile" href="https://shafin5556.github.io/" target="_blank" rel="noopener">
+                <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg></span>
+                <div class="tile-text"><strong>Portfolio</strong><span>shafin5556.github.io</span></div>
+                <span class="chev" aria-hidden="true">›</span>
               </a>
-              <a class="info-chip" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
-                <span class="chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span>
-                <div><span>GitHub</span><strong>github.com/Shafin5556</strong></div>
+              <a class="quick-tile" href="https://github.com/Shafin5556" target="_blank" rel="noopener">
+                <span class="tile-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0112 6.84c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .26.18.59.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></span>
+                <div class="tile-text"><strong>GitHub</strong><span>github.com/Shafin5556</span></div>
+                <span class="chev" aria-hidden="true">›</span>
               </a>
             </div>
           </article>
@@ -232,10 +192,16 @@
             </div>
             <p>Contributing to digital infrastructure for the E-Family Court pilot in Dhaka and Chattogram. Built an end-to-end digital case-filing system that modernizes family court proceedings.</p>
             <div class="tags"><span>Government</span><span>Laravel</span><span>Digital Transformation</span></div>
-            <a class="btn btn-primary" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
-              Open live project
-            </a>
+            <div class="project-actions">
+              <a class="project-domain" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17.9V14h4.9A8.05 8.05 0 0113 19.9zM4.1 14H9v5.9A8.05 8.05 0 014.1 14zM4.1 10A8.05 8.05 0 019 4.1V10H4.1zM13 4.1A8.05 8.05 0 0119.9 10H13V4.1z"/></svg>
+                efamilycourt.judiciary.gov.bd
+              </a>
+              <a class="btn btn-primary" href="https://efamilycourt.judiciary.gov.bd/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+                Open live project
+              </a>
+            </div>
           </article>
           <article class="settings-card project-card reveal">
             <div class="project-head">
@@ -248,10 +214,16 @@
             </div>
             <p>Developed a centralized management ecosystem for DIU featuring automated orientation, multi-tenant club management, and enrollment sync from GoEdu.</p>
             <div class="tags"><span>Full Stack</span><span>Automation</span><span>Event management</span></div>
-            <a class="btn btn-primary" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
-              Open live project
-            </a>
+            <div class="project-actions">
+              <a class="project-domain" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17.9V14h4.9A8.05 8.05 0 0113 19.9zM4.1 14H9v5.9A8.05 8.05 0 014.1 14zM4.1 10A8.05 8.05 0 019 4.1V10H4.1zM13 4.1A8.05 8.05 0 0119.9 10H13V4.1z"/></svg>
+                studentshub.daffodilvarsity.edu.bd
+              </a>
+              <a class="btn btn-primary" href="https://studentshub.daffodilvarsity.edu.bd/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+                Open live project
+              </a>
+            </div>
           </article>
         </section>
 
@@ -314,8 +286,7 @@
     </main>
 
     <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile navigation">
-      <button class="tab is-active" data-page="home" type="button"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg><span>Home</span></button>
-      <button class="tab" data-page="about" type="button"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg><span>About</span></button>
+      <button class="tab is-active" data-page="about" type="button"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm-8 9a8 8 0 0116 0v1H4v-1z"/></svg><span>About</span></button>
       <button class="tab" data-page="experience" type="button"><svg viewBox="0 0 24 24"><path d="M10 4h4a2 2 0 012 2v1h3a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3V6a2 2 0 012-2zm0 3h4V6h-4v1z"/></svg><span>Experience</span></button>
       <button class="tab" data-page="projects" type="button"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4V5zm9 0h7v4h-7V5zM4 14h7v5H4v-5zm9-3h7v8h-7v-8z"/></svg><span>Projects</span></button>
       <button class="tab" data-page="skills" type="button"><svg viewBox="0 0 24 24"><path d="M12 2l2.1 4.9L19 9l-4.2 2.9L16 17l-4-2.6L8 17l1.2-5.1L5 9l4.9-2.1L12 2z"/></svg><span>Skills</span></button>

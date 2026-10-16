@@ -8,7 +8,6 @@
   const stage = document.getElementById("stage");
 
   const labels = {
-    home: "Home",
     about: "About",
     experience: "Experience",
     projects: "Projects",
@@ -17,7 +16,7 @@
   };
 
   function setActive(page) {
-    if (!labels[page]) page = "home";
+    if (page === "home" || !labels[page]) page = "about";
 
     pages.forEach((p) => p.classList.toggle("is-active", p.id === "page-" + page));
     sideItems.forEach((b) => b.classList.toggle("is-active", b.dataset.page === page));
@@ -49,7 +48,6 @@
     btn.addEventListener("click", () => setActive(btn.dataset.goto));
   });
 
-  // Soft haptic-like feedback on mobile tabs
   tabs.forEach((tab) => {
     tab.addEventListener("pointerdown", () => {
       tab.style.transform = "scale(0.94)";
@@ -66,7 +64,7 @@
     searchInput.addEventListener("input", () => {
       const q = searchInput.value.trim().toLowerCase();
       if (!q) return;
-      const order = ["home", "about", "experience", "projects", "skills", "contact"];
+      const order = ["about", "experience", "projects", "skills", "contact"];
       const hit = order.find((id) => {
         const el = document.getElementById("page-" + id);
         return el && el.textContent.toLowerCase().includes(q);
@@ -76,8 +74,8 @@
   }
 
   window.addEventListener("hashchange", () => {
-    setActive((location.hash || "#home").slice(1));
+    setActive((location.hash || "#about").slice(1));
   });
 
-  setActive((location.hash || "#home").slice(1));
+  setActive((location.hash || "#about").slice(1));
 })();

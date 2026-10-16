@@ -477,7 +477,36 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
   border-radius: 999px;
   background: var(--bg-soft);
 }
-.project-card .btn { margin-top: 0.35rem; width: fit-content; }
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: 0.55rem;
+}
+.project-domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.85);
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  font-weight: 650;
+  word-break: break-all;
+}
+.project-domain svg { width: 0.95rem; height: 0.95rem; flex-shrink: 0; }
+.project-card .btn { width: fit-content; }
+.about-links {
+  margin-top: 0.85rem;
+}
+.about-links .quick-tile {
+  box-shadow: none;
+  background: rgba(255,255,255,0.72);
+}
 .contact-grid { margin-top: 0.15rem; }
 
 /* ===== Mobile bottom nav ===== */
