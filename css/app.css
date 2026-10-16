@@ -401,7 +401,7 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
   object-fit: cover;
   border: 3px solid transparent;
   background:
-    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(var(--surface-solid), var(--surface-solid)) padding-box,
     var(--brand-grad) border-box;
   flex-shrink: 0;
   box-shadow: 0 10px 28px rgba(233, 30, 140, 0.2);
