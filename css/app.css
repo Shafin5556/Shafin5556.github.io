@@ -465,20 +465,6 @@ svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
   hyphens: auto;
   line-height: 1.65 !important;
 }
-.signature-card {
-  margin: 1rem 0 0;
-  padding: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-.signature-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
