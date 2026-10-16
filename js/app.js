@@ -12,6 +12,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const GH_USER = "Shafin5556";
+  const GH_API = "https://github-contributions-api.jogruber.de/v4/" + GH_USER;
 
   const labels = {
     about: "About",
@@ -21,35 +22,9 @@
     contact: "Contact",
   };
 
-  const radarAxes = [
-    {
-      key: "Backend",
-      value: 0.92,
-      desc: "Laravel, PHP, Node.js, and REST APIs powering production platforms.",
-      tags: ["Laravel", "PHP", "Node.js", "REST"],
-    },
-    {
-      key: "Automation",
-      value: 0.86,
-      desc: "Queues, background jobs, sync pipelines, and operational workflows.",
-      tags: ["Queues", "Jobs", "Pipelines", "Sync"],
-    },
-    {
-      key: "Data",
-      value: 0.8,
-      desc: "MySQL/NoSQL, SQL tuning, scraping, and cross-system data engines.",
-      tags: ["MySQL", "NoSQL", "SQL", "ETL"],
-    },
-    {
-      key: "Delivery",
-      value: 0.84,
-      desc: "Secure, scalable delivery across campus and national-scale systems.",
-      tags: ["Security", "Scale", "MVC", "Git"],
-    },
-  ];
-
   let current = null;
   let busy = false;
+  let contribCache = { totals: null, byYear: {} };
 
   /* ---------- Theme ---------- */
   function getTheme() {
@@ -61,13 +36,12 @@
     try {
       localStorage.setItem("sa-theme", theme);
     } catch (_) {}
-    if (metaTheme) metaTheme.content = theme === "dark" ? "#0b1020" : "#f4f7fb";
+    if (metaTheme) metaTheme.content = theme === "dark" ? "#0c1018" : "#f4f7fb";
     const label = document.getElementById("theme-label");
     if (label) label.textContent = theme === "dark" ? "Light" : "Dark";
-    const chart = document.getElementById("gh-chart");
-    if (chart) {
-      const color = theme === "dark" ? "00b4f0" : "e91e8c";
-      chart.src = "https://ghchart.rshah.org/" + color + "/" + GH_USER;
+    const activeYear = document.querySelector(".year-btn.is-active");
+    if (activeYear && contribCache.byYear[activeYear.dataset.year]) {
+      renderContribGraph(activeYear.dataset.year, contribCache.byYear[activeYear.dataset.year]);
     }
   }
 
@@ -75,7 +49,7 @@
     applyTheme(getTheme() === "dark" ? "light" : "dark");
   }
 
-  applyTheme(getTheme());
+  applyTheme(getTheme() || "light");
   document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
   document.getElementById("theme-toggle-mobile")?.addEventListener("click", toggleTheme);
 
@@ -142,7 +116,6 @@
     if (animate && !reduceMotion) next.classList.add("is-entering");
     markReveals(next);
 
-    if (page === "skills") initRadar();
     if (animate && !reduceMotion) {
       window.setTimeout(() => next.classList.remove("is-entering"), 520);
     }
@@ -275,7 +248,7 @@
     });
   }
 
-  /* ---------- Hero canvas (subtle 3D-ish nodes) ---------- */
+  /* ---------- Hero canvas ---------- */
   function initHero() {
     const canvas = document.getElementById("hero-canvas");
     if (!canvas || reduceMotion) return;
@@ -331,7 +304,7 @@
           if (dist < 110) {
             const alpha = (1 - dist / 110) * 0.35;
             ctx.strokeStyle = dark
-              ? "rgba(0,180,240," + alpha + ")"
+              ? "rgba(56,199,255," + alpha + ")"
               : "rgba(233,30,140," + alpha + ")";
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -344,7 +317,7 @@
       for (const n of nodes) {
         const r = 1.6 + n.z * 1.8;
         const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 4);
-        g.addColorStop(0, dark ? "rgba(0,180,240,0.9)" : "rgba(233,30,140,0.9)");
+        g.addColorStop(0, dark ? "rgba(56,199,255,0.9)" : "rgba(233,30,140,0.9)");
         g.addColorStop(1, "rgba(124,58,237,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
@@ -368,177 +341,183 @@
     });
   }
 
-  /* ---------- Tech radar ---------- */
-  let radarReady = false;
-  function polar(cx, cy, r, angle) {
-    return {
-      x: cx + Math.cos(angle) * r,
-      y: cy + Math.sin(angle) * r,
+  /* ---------- Contributions graph ---------- */
+  function formatCount(n) {
+    return Number(n || 0).toLocaleString("en-US");
+  }
+
+  function levelColor(level) {
+    const map = {
+      0: "var(--c0)",
+      1: "var(--c1)",
+      2: "var(--c2)",
+      3: "var(--c3)",
+      4: "var(--c4)",
     };
+    return map[level] || map[0];
   }
 
-  function setRadarDetail(axis) {
-    const title = document.getElementById("radar-title");
-    const desc = document.getElementById("radar-desc");
-    const tags = document.getElementById("radar-tags");
-    if (!title || !desc || !tags) return;
-    title.textContent = axis.key;
-    desc.textContent = axis.desc;
-    tags.innerHTML = axis.tags.map((t) => "<span>" + t + "</span>").join("");
-  }
-
-  function initRadar() {
-    const svg = document.getElementById("tech-radar");
-    if (!svg || radarReady) return;
-    radarReady = true;
-
-    const cx = 160;
-    const cy = 160;
-    const maxR = 118;
-    const grid = svg.querySelector(".radar-grid");
-    const poly = document.getElementById("radar-poly");
-    const points = document.getElementById("radar-points");
-    const labelsEl = document.getElementById("radar-labels");
-    const n = radarAxes.length;
-
-    for (let ring = 1; ring <= 4; ring++) {
-      const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      c.setAttribute("cx", cx);
-      c.setAttribute("cy", cy);
-      c.setAttribute("r", String((maxR / 4) * ring));
-      grid.appendChild(c);
+  function setTotalLabel(yearKey, total) {
+    const countEl = document.getElementById("gh-total-count");
+    const labelEl = document.getElementById("gh-total-label");
+    if (countEl) countEl.textContent = formatCount(total);
+    if (labelEl) {
+      labelEl.textContent =
+        yearKey === "last"
+          ? "contributions in the last year"
+          : "contributions in " + yearKey;
     }
+  }
 
-    const pts = [];
-    radarAxes.forEach((axis, i) => {
-      const angle = -Math.PI / 2 + (i * 2 * Math.PI) / n;
-      const edge = polar(cx, cy, maxR, angle);
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      line.setAttribute("x1", cx);
-      line.setAttribute("y1", cy);
-      line.setAttribute("x2", edge.x);
-      line.setAttribute("y2", edge.y);
-      grid.appendChild(line);
+  function renderContribGraph(yearKey, days) {
+    const svg = document.getElementById("contrib-graph");
+    if (!svg || !days || !days.length) return;
 
-      const labelPos = polar(cx, cy, maxR + 18, angle);
-      const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      text.setAttribute("x", labelPos.x);
-      text.setAttribute("y", labelPos.y);
-      text.setAttribute("text-anchor", "middle");
-      text.setAttribute("dominant-baseline", "middle");
-      text.textContent = axis.key;
-      labelsEl.appendChild(text);
+    const cell = 11;
+    const gap = 3;
+    const step = cell + gap;
+    const left = 28;
+    const top = 18;
 
-      const p = polar(cx, cy, maxR * axis.value, angle);
-      pts.push(p.x + "," + p.y);
+    const sorted = days.slice().sort((a, b) => a.date.localeCompare(b.date));
+    const start = new Date(sorted[0].date + "T00:00:00");
+    const startPad = start.getDay(); // 0 Sun
+    const weeks = Math.ceil((sorted.length + startPad) / 7);
 
-      const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      dot.setAttribute("cx", p.x);
-      dot.setAttribute("cy", p.y);
-      dot.setAttribute("r", "5");
-      dot.dataset.index = String(i);
-      dot.addEventListener("mouseenter", () => {
-        points.querySelectorAll("circle").forEach((c) => c.classList.remove("is-active"));
-        dot.classList.add("is-active");
-        setRadarDetail(axis);
-      });
-      dot.addEventListener("focus", () => setRadarDetail(axis));
-      points.appendChild(dot);
+    const width = left + weeks * step + 4;
+    const height = top + 7 * step + 4;
+    svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+    svg.setAttribute("width", String(width));
+    svg.setAttribute("height", String(height));
+
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let html = "";
+    const weekdays = ["", "Mon", "", "Wed", "", "Fri", ""];
+    weekdays.forEach((label, i) => {
+      if (!label) return;
+      html +=
+        '<text x="0" y="' +
+        (top + i * step + cell - 1) +
+        '" fill="currentColor" font-size="9" opacity="0.65">' +
+        label +
+        "</text>";
     });
 
-    poly.setAttribute("points", pts.join(" "));
-    setRadarDetail(radarAxes[0]);
+    let lastMonth = -1;
+    sorted.forEach((day, index) => {
+      const d = new Date(day.date + "T00:00:00");
+      const week = Math.floor((index + startPad) / 7);
+      const dow = d.getDay();
+      const x = left + week * step;
+      const y = top + dow * step;
+      const month = d.getMonth();
+      if (dow === 0 && month !== lastMonth) {
+        lastMonth = month;
+        html +=
+          '<text x="' +
+          x +
+          '" y="11" fill="currentColor" font-size="9" opacity="0.7">' +
+          monthNames[month] +
+          "</text>";
+      }
+      const title = day.count + " contribution" + (day.count === 1 ? "" : "s") + " on " + day.date;
+      html +=
+        '<rect x="' +
+        x +
+        '" y="' +
+        y +
+        '" width="' +
+        cell +
+        '" height="' +
+        cell +
+        '" fill="' +
+        levelColor(day.level) +
+        '"><title>' +
+        title +
+        "</title></rect>";
+    });
+
+    svg.innerHTML = html;
+    svg.style.color = getComputedStyle(document.documentElement).getPropertyValue("--muted").trim() || "#5b6472";
   }
 
-  /* ---------- GitHub widgets ---------- */
-  async function loadGitHub() {
-    const chart = document.getElementById("gh-chart");
-    if (chart) {
-      const color = getTheme() === "dark" ? "00b4f0" : "e91e8c";
-      chart.src = "https://ghchart.rshah.org/" + color + "/" + GH_USER;
-    }
+  async function fetchYear(yearKey) {
+    if (contribCache.byYear[yearKey]) return contribCache.byYear[yearKey];
+    const q = yearKey === "last" ? "y=last" : "y=" + yearKey;
+    const res = await fetch(GH_API + "?" + q);
+    if (!res.ok) throw new Error("contrib fetch failed");
+    const data = await res.json();
+    contribCache.byYear[yearKey] = data.contributions || [];
+    return contribCache.byYear[yearKey];
+  }
+
+  async function selectYear(yearKey) {
+    document.querySelectorAll(".year-btn").forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.year === yearKey);
+    });
 
     try {
-      const [userRes, repoRes] = await Promise.all([
-        fetch("https://api.github.com/users/" + GH_USER),
-        fetch("https://api.github.com/users/" + GH_USER + "/repos?sort=updated&per_page=100"),
-      ]);
-      if (!userRes.ok || !repoRes.ok) throw new Error("GitHub API unavailable");
-      const user = await userRes.json();
-      const repos = await repoRes.json();
-
-      const stars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
-      const set = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = String(val);
-      };
-      set("gh-repos", user.public_repos ?? repos.length);
-      set("gh-followers", user.followers ?? "—");
-      set("gh-stars", stars);
-
-      const langCount = {};
-      repos.forEach((r) => {
-        if (r.language) langCount[r.language] = (langCount[r.language] || 0) + 1;
-      });
-      const langs = Object.entries(langCount)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 5);
-      const total = langs.reduce((s, [, n]) => s + n, 0) || 1;
-      const langBox = document.getElementById("gh-langs");
-      if (langBox) {
-        langBox.innerHTML = langs
-          .map(([name, n]) => {
-            const pct = Math.round((n / total) * 100);
-            return (
-              '<div class="lang-row"><span>' +
-              name +
-              '</span><div class="lang-bar"><i style="width:' +
-              pct +
-              '%"></i></div><span>' +
-              pct +
-              "%</span></div>"
-            );
-          })
-          .join("");
-      }
-
-      const top = repos
-        .filter((r) => !r.fork)
-        .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0) || new Date(b.updated_at) - new Date(a.updated_at))
-        .slice(0, 4);
-      const list = document.getElementById("gh-repos-list");
-      if (list) {
-        list.innerHTML = top
-          .map((r) => {
-            return (
-              '<a class="gh-repo magnetic" href="' +
-              r.html_url +
-              '" target="_blank" rel="noopener"><div><strong>' +
-              r.name +
-              "</strong><span>" +
-              (r.description || r.language || "Repository") +
-              '</span></div><em>★ ' +
-              (r.stargazers_count || 0) +
-              "</em></a>"
-            );
-          })
-          .join("");
-      }
+      const days = await fetchYear(yearKey);
+      const total =
+        yearKey === "last"
+          ? contribCache.totals?.lastYear ?? days.reduce((s, d) => s + (d.count || 0), 0)
+          : contribCache.totals?.[yearKey] ?? days.reduce((s, d) => s + (d.count || 0), 0);
+      setTotalLabel(yearKey, total);
+      renderContribGraph(yearKey, days);
     } catch (_) {
-      const set = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
-      };
-      set("gh-repos", "—");
-      set("gh-followers", "—");
-      set("gh-stars", "—");
-      const list = document.getElementById("gh-repos-list");
-      if (list) {
-        list.innerHTML =
-          '<p class="muted">Live GitHub stats will appear when the API is reachable. Profile: github.com/' +
-          GH_USER +
-          "</p>";
+      setTotalLabel(yearKey, yearKey === "last" ? 2236 : 0);
+    }
+  }
+
+  function buildYearToggles(totals) {
+    const box = document.getElementById("year-toggles");
+    if (!box) return;
+    const years = Object.keys(totals)
+      .filter((k) => /^\d{4}$/.test(k))
+      .sort((a, b) => Number(b) - Number(a));
+
+    const buttons = ['<button class="year-btn magnetic is-active" type="button" data-year="last">Last year</button>']
+      .concat(
+        years.map(
+          (y) =>
+            '<button class="year-btn magnetic" type="button" data-year="' +
+            y +
+            '">' +
+            y +
+            "</button>"
+        )
+      )
+      .join("");
+
+    box.innerHTML = buttons;
+    box.querySelectorAll(".year-btn").forEach((btn) => {
+      btn.addEventListener("click", () => selectYear(btn.dataset.year));
+    });
+  }
+
+  async function loadContributions() {
+    try {
+      const res = await fetch(GH_API);
+      if (!res.ok) throw new Error("totals failed");
+      const data = await res.json();
+      contribCache.totals = data.total || {};
+      if (!contribCache.totals.lastYear) {
+        const lastRes = await fetch(GH_API + "?y=last");
+        if (lastRes.ok) {
+          const lastData = await lastRes.json();
+          contribCache.totals.lastYear = lastData.total?.lastYear;
+          contribCache.byYear.last = lastData.contributions || [];
+        }
       }
+      buildYearToggles(contribCache.totals);
+      await selectYear("last");
+    } catch (_) {
+      const box = document.getElementById("year-toggles");
+      if (box) {
+        box.innerHTML =
+          '<button class="year-btn is-active" type="button" data-year="last">Last year</button>';
+      }
+      setTotalLabel("last", 2236);
     }
   }
 
@@ -546,7 +525,7 @@
   setActive((location.hash || "#about").slice(1), { force: true, instant: true });
   initCursor();
   initHero();
-  loadGitHub();
+  loadContributions();
 
   if (boot) {
     window.requestAnimationFrame(() => {
